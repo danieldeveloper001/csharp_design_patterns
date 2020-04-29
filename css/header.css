@@ -1,0 +1,13 @@
+/*
+ * Styles for Header
+ */
+.header_title {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.header_author {
+  text-align: center;
+  margin: 0px;
+  padding: 0px;
+}

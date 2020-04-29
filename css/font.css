@@ -1,0 +1,17 @@
+/*
+ * Styles for Fonts
+ */
+@font-face {
+  font-family: 'ubuntu-regular';
+  src: url('../ttf/ubuntu/ubuntu-regular.ttf');
+}
+
+@font-face {
+  font-family: 'ubuntu-condensed-regular';
+  src: url('../ttf/ubuntu_condensed/ubuntu-condensed-regular.ttf');
+}
+
+@font-face {
+  font-family: 'ubuntu-mono-regular';
+  src: url('../ttf/ubuntu_mono/ubuntu-mono-regular.ttf');
+}

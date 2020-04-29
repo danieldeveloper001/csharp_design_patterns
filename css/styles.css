@@ -1,0 +1,66 @@
+/*
+ * Styles
+ */
+body {
+  color: #212121;
+  font-family: 'ubuntu-regular', sans-serif;
+  font-size: 1.0em;
+  font-weight: normal;
+  margin: 0px;
+  padding: 25px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: #212121;
+  text-decoration: none;
+}
+
+a:hover {
+  color:  #990000;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 3em;
+  margin: 0px;
+  padding: 0px;
+}
+
+h2 {
+  font-size: 2em;
+  margin: 0px;
+  padding: 0px 0px 25px 0px;
+}
+
+h3 {
+  font-size: 1.5em;
+  margin: 0px;
+  padding: 0px 0px 10px 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'ubuntu-condensed-regular', sans-serif;
+  font-weight: normal;
+}
+
+hr {
+  border: none;
+  border-bottom: 1px solid #212121;
+}
+
+p {
+  font-family: 'ubuntu-regular', sans-serif;
+  font-size: 1.25em;
+  text-align: justify;
+  margin: 0px;
+  padding: 0px 0px 25px 0px;
+}
