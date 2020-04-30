@@ -91,15 +91,6 @@
       nunc. Duis nec erat ex. Maecenas eget felis eu justo tempus convallis non
       ac erat.
     </p>
-    <pre class="code code-dark">
-      #include &lt;stdio.h&gt;
-
-      int main() {
-        printf("Hello, world!");
-
-        return 0;
-      }
-    </pre>
     <div class="message message-blue">
       <strong>Information: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan dui.
     </div>
@@ -119,11 +110,72 @@
         <a href="#command">1.2. Command</a>
       </h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
-        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
-        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
-        tortor vestibulum tempus.
+        The command design pattern goal is to provide means for encapsulating requests as objects and to decouple the
+        <strong>client</strong> that performs the request from the <strong>receiver</strong> that processes the request.
       </p>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> WRITE ABOUT UNDO AND REDO OPERATIONS
+      </div>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> WRITE ABOUT COMBINING SIMPLE COMMANDS INTO MACROS
+      </div>
+      <h4 id="command_class_diagram">
+        <a href="#command_class_diagram">1.2.1. Class Diagram</a>
+      </h4>
+      <p>
+        A possible implementation is composed by a few components, namely...
+      </p>
+      <ul>
+        <li>
+          <strong>Client</strong>:
+          responsible for creating a request.
+        </li>
+        <li><strong>Receiver</strong>:
+
+        </li>
+        <li>
+          <strong>Invoker</strong>:
+          responsible for processing a request.
+        </li>
+        <li>
+          <strong>Abstract Command</strong>:
+          responsible for stabilishing the contract used by the client to create a request for the receiver.
+        </li>
+        <li><strong>Concrete Command</strong>:
+          responsible for implementing the logic of the command.
+      </ul>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> DRAW CLASS DIAGRAM
+      </div>
+      <h4 id="command_benefits">
+        <a href="#command_benefits">1.2.2. Benefits</a>
+      </h4>
+      <p>Below, a few benefits of the command design pattern usage.</p>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> WRITE BENEFITS
+      </div>
+      <h4 id="command_drawback">
+        <a href="#command_drawback">1.2.3. Drawbacks</a>
+      </h4>
+      <p>Below, a few drawbacks of the command design pattern usage.</p>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> WRITE DRAWBACKS
+      </div>
+      <h4 id="command_drawback">
+        <a href="#command_drawback">1.2.4. Examples</a>
+      </h4>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> WRITE EXAMPLES
+      </div>
+      <pre class="code code-dark">
+        #include &lt;stdio.h&gt;
+
+        int main() {
+          printf("Hello, world!");
+
+          return 0;
+        }
+      </pre>
     </section>
     <section>
       <h3 id="interpreter">
