@@ -135,12 +135,13 @@
         </li>
         <li>
           <strong>Receiver</strong>:
-          responsible for the request processing. It receives parameters from the command instance and processes these
-          parameters by executing its own logic.
+          responsible for the request processing. It receives parameters encapsulated within a command instance and
+          processes these parameters by executing its own logic.
         </li>
         <li>
           <strong>Invoker</strong>:
-          responsible for the command execution. It receives one or more command instances and executes them.
+          responsible for the command execution. It receives one or more command instances, executes them and optionally
+          keeps track of the execution if undo and redo functionallity is required.
         </li>
         <li>
           <strong>Abstract Command</strong>:
