@@ -8,17 +8,10 @@ namespace Project
         static void Main(string[] args)
         {
             var receiver = new Receiver();
+            var command = new Command(receiver);
+            var invoker = new Invoker(command);
 
-            var commands = new List<ICommand>
-            {
-                new FooCommand(receiver),
-                new BarCommand(receiver),
-                new BazCommand(receiver)
-            };
-
-            var invoker = new Invoker(commands);
-
-            invoker.Execute(true, 123, "xpto");
+            invoker.Execute();
         }
     }
 }
