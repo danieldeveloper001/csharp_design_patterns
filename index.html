@@ -124,39 +124,107 @@
       <h4 id="command_class_diagram">
         <a href="#command_class_diagram">1.2.1. Components</a>
       </h4>
+      <p>
+        A possible implementation is composed by a <strong>client</strong>, a <strong>receiver</strong>, an
+        <strong>invoker</strong> and one or more <strong>commands</strong>.
+      </p>
       <ul>
         <li>
           <strong>Client</strong>:
-          responsible for the request creation. It parametrizes one or more command instances and sends them to the
-          invoker instance.
+          responsible for the request creation. It creates and parametrizes one or more command instances and sends them
+          to the invoker instance.
         </li>
+        <pre class="code code-dark">
+<!--   -->  class Client
+<!--   -->  {
+<!--   -->      static void Main(string[] args)
+<!--   -->      {
+<!--   -->          var receiver = new Receiver();
+<!--   -->          var command = new Command(receiver);
+<!--   -->          var invoker = new Invoker(command);
+<!--   -->
+<!--   -->          invoker.Execute();
+<!--   -->      }
+<!--   -->  }
+<!-- --></pre>
         <li>
           <strong>Receiver</strong>:
           responsible for the request processing. It receives parameters encapsulated within a command instance and
           processes these parameters by executing its own logic.
         </li>
+        <pre class="code code-dark">
+<!--   -->  class Receiver : IReceiver
+<!--   -->  {
+<!--   -->      public void Execute()
+<!--   -->      {
+<!--   -->          // Receiver logic
+<!--   -->      }
+<!--   -->  }
+<!-- --></pre>
         <li>
           <strong>Invoker</strong>:
-          responsible for the command execution. It receives one or more command instances, executes them and optionally
-          keeps track of the execution if undo and redo functionallity is required.
+          responsible for executing one or more commands. It receives one or more command instances, executes them and
+          optionally keeps track of the execution if undo and redo functionallity is required.
         </li>
+        <pre class="code code-dark">
+<!--   -->  class Invoker
+<!--   -->  {
+<!--   -->      private ICommand _command;
+<!--   -->
+<!--   -->      public Invoker(ICommand command)
+<!--   -->      {
+<!--   -->          _command = command;
+<!--   -->      }
+<!--   -->
+<!--   -->      public void Execute()
+<!--   -->      {
+<!--   -->          // Invoker logic
+<!--   -->
+<!--   -->          _command.Execute();
+<!--   -->
+<!--   -->          // Invoker logic
+<!--   -->      }
+<!--   -->  }
+<!-- --></pre>
         <li>
-          <strong>Abstract Command</strong>:
-          responsible for stabilishing the public command contract. It specifies the input and output parameters and one
-          or more method signatures for the actions that command instances can perform.
+          <strong>Command</strong>:
+          responsible for receiving the receiver instance, the data required by the receiver and for calling the
+          receiver. It encapsulates the request passed by a client through input parameters as though the receiver that
+          will make use of these input parameteres, implements the actual logic for one or more actions that the
+          abstract command stabilished as its contract for dealing with the receiver, invokes the receiver and returns
+          the output parameters to the client that issued the request.
         </li>
-        <li><strong>Concrete Command</strong>:
-          responsible for implementing the public command contract specified by the abstract command. It encapsulates
-          the request passed by a client through input parameters as though the receiver that will make use of these
-          input parameteres, implements the actual logic for one or more actions that the abstract command stabilished
-          as its contract for dealing with the receiver, invokes the receiver and returns the output parameters to the
-          client that issued the request.
+        <pre class="code code-dark">
+<!--  -->  class Command : ICommand
+<!--  -->  {
+<!--  -->      private IReceiver _receiver;
+<!--   -->
+<!--  -->      public Command(IReceiver receiver)
+<!--  -->      {
+<!--  -->          _receiver = receiver;
+<!--  -->      }
+<!--   -->
+<!--  -->      public void Execute()
+<!--  -->      {
+<!--  -->          _receiver.Execute();
+<!--  -->      }
+<!--  -->  }
+<!-- --></pre>
       </ul>
+      <h4 id="command_benefits">
+        <a href="#command_benefits">1.2.2. Class Diagram</a>
+      </h4>
       <div class="message message-yellow">
         <strong>TODO:</strong> DRAW CLASS DIAGRAM
       </div>
       <h4 id="command_benefits">
-        <a href="#command_benefits">1.2.2. Benefits</a>
+        <a href="#command_benefits">1.2.3. Sequence Diagram</a>
+      </h4>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> DRAW SEQUENCE DIAGRAM
+      </div>
+      <h4 id="command_benefits">
+        <a href="#command_benefits">1.2.4. Benefits</a>
       </h4>
       <p>Below, a few benefits of the command design pattern usage.</p>
       <ul>
@@ -164,14 +232,14 @@
         <li></li>
       </ul>
       <h4 id="command_drawback">
-        <a href="#command_drawback">1.2.3. Drawbacks</a>
+        <a href="#command_drawback">1.2.5. Drawbacks</a>
       </h4>
       <p>Below, a few drawbacks of the command design pattern usage.</p>
       <div class="message message-yellow">
         <strong>TODO:</strong> WRITE DRAWBACKS
       </div>
       <h4 id="command_drawback">
-        <a href="#command_drawback">1.2.4. Examples</a>
+        <a href="#command_drawback">1.2.6. Examples</a>
       </h4>
       <div class="message message-yellow">
         <strong>TODO:</strong> WRITE EXAMPLES
