@@ -116,8 +116,8 @@
         are sent to an <strong>invoker</strong> and can be combined from simple single command operations to complex
         multiple command operations that the invoker will execute and optionally keep track of such execution.
       </p>
-      <h4 id="command_class_diagram">
-        <a href="#command_class_diagram">1.2.1. Components</a>
+      <h4 id="command_components">
+        <a href="#command_components">1.2.1. Components</a>
       </h4>
       <p>
         A possible implementation is composed by a <strong>client</strong>, a <strong>receiver</strong>, an
@@ -128,59 +128,59 @@
           <strong>Client</strong>:
           responsible for the request creation. It creates and parametrizes one or more command instances and sends them
           to the invoker instance.
+          <pre class="code code-dark">
+<!--     -->  class Client
+<!--     -->  {
+<!--     -->      static void Main(string[] args)
+<!--     -->      {
+<!--     -->          var receiver = new Receiver();
+<!--     -->          var command = new Command(receiver);
+<!--     -->          var invoker = new Invoker(command);
+<!--     -->
+<!--     -->          invoker.Execute();
+<!--     -->      }
+<!--     -->  }
+<!--   --></pre>
         </li>
-        <pre class="code code-dark">
-<!--   -->  class Client
-<!--   -->  {
-<!--   -->      static void Main(string[] args)
-<!--   -->      {
-<!--   -->          var receiver = new Receiver();
-<!--   -->          var command = new Command(receiver);
-<!--   -->          var invoker = new Invoker(command);
-<!--   -->
-<!--   -->          invoker.Execute();
-<!--   -->      }
-<!--   -->  }
-<!-- --></pre>
         <li>
           <strong>Receiver</strong>:
           responsible for the request processing. It receives parameters encapsulated within a command instance and
           processes these parameters by executing its own logic.
+          <pre class="code code-dark">
+<!--     -->  class Receiver : IReceiver
+<!--     -->  {
+<!--     -->      public void Execute()
+<!--     -->      {
+<!--     -->          // Receiver logic
+<!--     -->      }
+<!--     -->  }
+<!--   --></pre>
         </li>
-        <pre class="code code-dark">
-<!--   -->  class Receiver : IReceiver
-<!--   -->  {
-<!--   -->      public void Execute()
-<!--   -->      {
-<!--   -->          // Receiver logic
-<!--   -->      }
-<!--   -->  }
-<!-- --></pre>
         <li>
           <strong>Invoker</strong>:
           responsible for executing one or more commands. It receives one or more command instances, executes them and
           optionally keeps track of the execution if undo and redo functionallity is required.
+          <pre class="code code-dark">
+<!--     -->  class Invoker
+<!--     -->  {
+<!--     -->      private ICommand _command;
+<!--     -->
+<!--     -->      public Invoker(ICommand command)
+<!--     -->      {
+<!--     -->          _command = command;
+<!--     -->      }
+<!--     -->
+<!--     -->      public void Execute()
+<!--     -->      {
+<!--     -->          // Invoker logic
+<!--     -->
+<!--     -->          _command.Execute();
+<!--     -->
+<!--     -->          // Invoker logic
+<!--     -->      }
+<!--     -->  }
+<!--   --></pre>
         </li>
-        <pre class="code code-dark">
-<!--   -->  class Invoker
-<!--   -->  {
-<!--   -->      private ICommand _command;
-<!--   -->
-<!--   -->      public Invoker(ICommand command)
-<!--   -->      {
-<!--   -->          _command = command;
-<!--   -->      }
-<!--   -->
-<!--   -->      public void Execute()
-<!--   -->      {
-<!--   -->          // Invoker logic
-<!--   -->
-<!--   -->          _command.Execute();
-<!--   -->
-<!--   -->          // Invoker logic
-<!--   -->      }
-<!--   -->  }
-<!-- --></pre>
         <li>
           <strong>Command</strong>:
           responsible for receiving the receiver instance, the data required by the receiver and for calling the
@@ -188,32 +188,32 @@
           will make use of these input parameteres, implements the actual logic for one or more actions that the
           abstract command stabilished as its contract for dealing with the receiver, invokes the receiver and returns
           the output parameters to the client that issued the request.
+          <pre class="code code-dark">
+<!--    -->  class Command : ICommand
+<!--    -->  {
+<!--    -->      private IReceiver _receiver;
+<!--    -->
+<!--    -->      public Command(IReceiver receiver)
+<!--    -->      {
+<!--    -->          _receiver = receiver;
+<!--    -->      }
+<!--    -->
+<!--    -->      public void Execute()
+<!--    -->      {
+<!--    -->          _receiver.Execute();
+<!--    -->      }
+<!--    -->  }
+<!--   --></pre>
         </li>
-        <pre class="code code-dark">
-<!--  -->  class Command : ICommand
-<!--  -->  {
-<!--  -->      private IReceiver _receiver;
-<!--   -->
-<!--  -->      public Command(IReceiver receiver)
-<!--  -->      {
-<!--  -->          _receiver = receiver;
-<!--  -->      }
-<!--   -->
-<!--  -->      public void Execute()
-<!--  -->      {
-<!--  -->          _receiver.Execute();
-<!--  -->      }
-<!--  -->  }
-<!-- --></pre>
       </ul>
-      <h4 id="command_benefits">
-        <a href="#command_benefits">1.2.2. Class Diagram</a>
+      <h4 id="command_class_diagram">
+        <a href="#command_class_diagram">1.2.2. Class Diagram</a>
       </h4>
       <div class="message message-yellow">
         <strong>TODO:</strong> DRAW CLASS DIAGRAM
       </div>
-      <h4 id="command_benefits">
-        <a href="#command_benefits">1.2.3. Sequence Diagram</a>
+      <h4 id="command_sequence_diagram">
+        <a href="#command_sequence_diagram">1.2.3. Sequence Diagram</a>
       </h4>
       <div class="message message-yellow">
         <strong>TODO:</strong> DRAW SEQUENCE DIAGRAM
@@ -222,32 +222,22 @@
         <a href="#command_benefits">1.2.4. Benefits</a>
       </h4>
       <p>Below, a few benefits of the command design pattern usage.</p>
-      <ul>
-        <li>The client logic is decoupled from the receiver.</li>
-        <li></li>
-      </ul>
-      <h4 id="command_drawback">
-        <a href="#command_drawback">1.2.5. Drawbacks</a>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> WRITE BENEFITS
+      </div>
+      <h4 id="command_drawbacks">
+        <a href="#command_drawbacks">1.2.5. Drawbacks</a>
       </h4>
       <p>Below, a few drawbacks of the command design pattern usage.</p>
       <div class="message message-yellow">
         <strong>TODO:</strong> WRITE DRAWBACKS
       </div>
-      <h4 id="command_drawback">
-        <a href="#command_drawback">1.2.6. Examples</a>
+      <h4 id="command_examples">
+        <a href="#command_examples">1.2.6. Examples</a>
       </h4>
       <div class="message message-yellow">
         <strong>TODO:</strong> WRITE EXAMPLES
       </div>
-      <pre class="code code-dark">
-        #include &lt;stdio.h&gt;
-
-        int main() {
-          printf("Hello, world!");
-
-          return 0;
-        }
-      </pre>
     </section>
     <section>
       <h3 id="interpreter">
