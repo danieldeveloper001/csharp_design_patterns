@@ -110,8 +110,10 @@
         <a href="#command">1.2. Command</a>
       </h3>
       <p>
-        The command design pattern goal is to provide means for encapsulating requests as objects and to decouple the
+        The command design pattern goal is to provide means for encapsulating requests as objects and decoupling the
         <strong>client</strong> that performs the request from the <strong>receiver</strong> that processes the request.
+      </p>
+      <p>
       </p>
       <div class="message message-yellow">
         <strong>TODO:</strong> WRITE ABOUT UNDO AND REDO OPERATIONS
@@ -128,21 +130,29 @@
       <ul>
         <li>
           <strong>Client</strong>:
-          responsible for creating a request.
+          responsible for the request creation. It parametrizes one or more command instances and sends them to the
+          invoker instance.
         </li>
-        <li><strong>Receiver</strong>:
-
+        <li>
+          <strong>Receiver</strong>:
+          responsible for the request processing. It receives parameters from the command instance and processes these
+          parameters by executing its own logic.
         </li>
         <li>
           <strong>Invoker</strong>:
-          responsible for processing a request.
+          responsible for the command execution. It receives one or more command instances and executes them.
         </li>
         <li>
           <strong>Abstract Command</strong>:
-          responsible for stabilishing the contract used by the client to create a request for the receiver.
+          responsible for stabilishing the public command contract. It specifies the input and output parameters and one
+          or more method signatures for the actions that command instances can perform.
         </li>
         <li><strong>Concrete Command</strong>:
-          responsible for implementing the logic of the command.
+          responsible for implementing the public command contract specified by the abstract command. It encapsulates
+          the request passed by a client through input parameters as though the receiver that will make use of these
+          input parameteres, implements the actual logic for one or more actions that the abstract command stabilished
+          as its contract for dealing with the receiver, invokes the receiver and returns the output parameters to the
+          client that issued the request.
       </ul>
       <div class="message message-yellow">
         <strong>TODO:</strong> DRAW CLASS DIAGRAM
@@ -151,9 +161,10 @@
         <a href="#command_benefits">1.2.2. Benefits</a>
       </h4>
       <p>Below, a few benefits of the command design pattern usage.</p>
-      <div class="message message-yellow">
-        <strong>TODO:</strong> WRITE BENEFITS
-      </div>
+      <ul>
+        <li>The client logic is decoupled from the receiver.</li>
+        <li></li>
+      </ul>
       <h4 id="command_drawback">
         <a href="#command_drawback">1.2.3. Drawbacks</a>
       </h4>
