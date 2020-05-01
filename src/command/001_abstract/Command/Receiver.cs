@@ -11,7 +11,7 @@ namespace Project
     {
         public void Execute()
         {
-            Console.WriteLine($"{nameof(Receiver)} executed!");
+            Console.WriteLine($"'{nameof(Receiver)}' executed!");
         }
     }
 }

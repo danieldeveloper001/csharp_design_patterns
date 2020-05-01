@@ -14,9 +14,9 @@ namespace Project
 
         public void Execute()
         {
-            Console.WriteLine($"{nameof(Invoker)} invoking {_command.GetType().Name}...");
+            Console.WriteLine($"'{nameof(Invoker)}' calling '{_command.GetType().Name}'...");
             _command.Execute();
-            Console.WriteLine($"{nameof(Invoker)} invoked {_command.GetType().Name}!");
+            Console.WriteLine($"'{nameof(Invoker)}' called '{_command.GetType().Name}'!");
         }
     }
 }

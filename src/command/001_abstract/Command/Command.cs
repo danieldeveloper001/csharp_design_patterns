@@ -18,9 +18,9 @@ namespace Project
 
         public void Execute()
         {
-            Console.WriteLine($"{nameof(Command)} invoking {_receiver.GetType().Name}...");
+            Console.WriteLine($"'{nameof(Command)}' calling '{_receiver.GetType().Name}'...");
             _receiver.Execute();
-            Console.WriteLine($"{nameof(Command)} invoked {_receiver.GetType().Name}!");
+            Console.WriteLine($"'{nameof(Command)}' called '{_receiver.GetType().Name}'!");
         }
     }
 }
