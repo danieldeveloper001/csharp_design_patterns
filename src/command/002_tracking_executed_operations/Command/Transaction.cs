@@ -5,7 +5,8 @@ namespace Project
 {
     interface ITransaction
     {
-        IList<IOperation> ExecutedOperations { get; }
+        IList<IOperation> SuccessfullyExecutedOperations { get; }
+        IList<IOperation> UnsuccessfullyExecutedOperations { get; }
 
         bool Execute(IOperation operation);
         void Report();
@@ -13,11 +14,13 @@ namespace Project
 
     class Transaction : ITransaction
     {
-        public IList<IOperation> ExecutedOperations { get; private set; }
+        public IList<IOperation> SuccessfullyExecutedOperations { get; private set; }
+        public IList<IOperation> UnsuccessfullyExecutedOperations { get; private set; }
 
         public Transaction()
         {
-            ExecutedOperations = new List<IOperation>();
+            SuccessfullyExecutedOperations = new List<IOperation>();
+            UnsuccessfullyExecutedOperations = new List<IOperation>();
         }
 
         public bool Execute(IOperation operation)
@@ -25,18 +28,28 @@ namespace Project
             Console.WriteLine($"[INFORMATION] Executing '{operation.GetType().Name} of '{operation.Amount}'...");
             bool executed = operation.Execute();
             if (!executed)
+            {
+                UnsuccessfullyExecutedOperations.Add(operation);
                 return false;
+            }
 
-            ExecutedOperations.Add(operation);
+            SuccessfullyExecutedOperations.Add(operation);
             return true;
         }
 
         public void Report()
         {
+            void OperationReport(IList<IOperation> operations, string title)
+            {
+                Console.WriteLine($"\n>>> {title}");
+                foreach(var operation in operations)
+                    Console.WriteLine($"{operation.GetType().Name, -30}{operation.Amount, 10}");
+            }
+
             Console.WriteLine();
             Console.WriteLine($"> Transaction Report");
-            foreach(var executedOperation in ExecutedOperations)
-                Console.WriteLine($"{executedOperation.GetType().Name, -30}{executedOperation.Amount, 10}");
+            OperationReport(SuccessfullyExecutedOperations, "Successfull");
+            OperationReport(UnsuccessfullyExecutedOperations, "Unsuccessfull");
         }
     }
 }
