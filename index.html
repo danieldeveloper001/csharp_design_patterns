@@ -109,10 +109,6 @@
       <h4 id="command_components">
         <a href="#command_components">1.2.1. Components</a>
       </h4>
-      <p>
-        A possible implementation is composed by a <strong>client</strong>, a <strong>receiver</strong>, an
-        <strong>invoker</strong> and one or more <strong>commands</strong>.
-      </p>
       <ul>
         <li>
           <strong>Client</strong>:
@@ -162,11 +158,7 @@
 <!--     -->
 <!--     -->      public void Execute()
 <!--     -->      {
-<!--     -->          // Invoker logic
-<!--     -->
 <!--     -->          _command.Execute();
-<!--     -->
-<!--     -->          // Invoker logic
 <!--     -->      }
 <!--     -->  }
 <!--   --></pre>
@@ -196,37 +188,32 @@
 <!--   --></pre>
         </li>
       </ul>
-      <h4 id="command_class_diagram">
-        <a href="#command_class_diagram">1.2.2. Class Diagram</a>
-      </h4>
-      <div class="message message-yellow">
-        <strong>TODO:</strong> DRAW CLASS DIAGRAM
-      </div>
-      <h4 id="command_sequence_diagram">
-        <a href="#command_sequence_diagram">1.2.3. Sequence Diagram</a>
-      </h4>
-      <div class="message message-yellow">
-        <strong>TODO:</strong> DRAW SEQUENCE DIAGRAM
-      </div>
-      <h4 id="command_benefits">
-        <a href="#command_benefits">1.2.4. Benefits</a>
-      </h4>
-      <p>Below, a few benefits of the command design pattern usage.</p>
-      <div class="message message-yellow">
-        <strong>TODO:</strong> WRITE BENEFITS
-      </div>
-      <h4 id="command_drawbacks">
-        <a href="#command_drawbacks">1.2.5. Drawbacks</a>
-      </h4>
-      <p>Below, a few drawbacks of the command design pattern usage.</p>
-      <div class="message message-yellow">
-        <strong>TODO:</strong> WRITE DRAWBACKS
-      </div>
       <h4 id="command_examples">
-        <a href="#command_examples">1.2.6. Examples</a>
+        <a href="#command_examples">1.2.3. Examples</a>
       </h4>
+      <ul>
+        <li>
+          <strong>Tracking of successfully and unsuccessfully executed operations.</strong>
+          The client may send one or more requests to the receiver via the invoker, which will execute the commands and
+          track the execution of successfully and unsuccessfully executed commands. A command is considered successfull
+          when validations on the receiver are applied and a positive result is returned.
+          <a href="#">[Source Code]</a>
+        </li>
+        <li>
+          <strong>Undoing execution.</strong>
+          The client may send one or more requests to the receiver via the invoker, which will execute the commands and
+          track the execution, so that commands can be undone by a request from the client.
+          <a href="#">[Source Code]</a>
+        </li>
+        <li>
+          <strong>Delaying execution.</strong>
+          The client may send one or more requests to the receiver via the invoker, which will track the requests for
+          later execution, so that commands can be executed later by a request from the client.
+          <a href="#">[Source Code]</a>
+        </li>
+      </ul>
       <div class="message message-yellow">
-        <strong>TODO:</strong> WRITE EXAMPLES
+        <strong>TODO:</strong> WRITE EXAMPLES AND LINK TO SOURCE
       </div>
     </section>
     <section>
