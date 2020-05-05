@@ -47,14 +47,14 @@
             <a class="dropdown-item" href="#prototype">2.4. Prototype</a>
             <a class="dropdown-item" href="#singleton">2.5. Singleton</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#creational">3. Structural</a>
-            <a class="dropdown-item" href="#adapter">Adapter</a>
-            <a class="dropdown-item" href="#bridge">Bridge</a>
-            <a class="dropdown-item" href="#composite">Composite</a>
-            <a class="dropdown-item" href="#decorator">Decorator</a>
-            <a class="dropdown-item" href="#facade">Facade</a>
-            <a class="dropdown-item" href="#flyweight">Flyweight</a>
-            <a class="dropdown-item" href="#proxy">Proxy</a>
+            <a class="dropdown-item" href="#structural">3. Structural</a>
+            <a class="dropdown-item" href="#adapter">3.1. Adapter</a>
+            <a class="dropdown-item" href="#bridge">3.2. Bridge</a>
+            <a class="dropdown-item" href="#composite">3.3. Composite</a>
+            <a class="dropdown-item" href="#decorator">3.4. Decorator</a>
+            <a class="dropdown-item" href="#facade">3.5. Facade</a>
+            <a class="dropdown-item" href="#flyweight">3.6. Flyweight</a>
+            <a class="dropdown-item" href="#proxy">3.7. Proxy</a>
           </div>
         </li>
       </ul>
@@ -81,28 +81,8 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
       dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
       sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
-      tortor vestibulum tempus. Cras ac laoreet velit. In hac habitasse platea
-      dictumst. Pellentesque eu nisl vel tellus consequat fringilla imperdiet
-      sed lorem. Vestibulum aliquet erat vitae nibh hendrerit, at interdum ipsum
-      pretium. Nulla a facilisis elit, id tristique nisi. Vivamus in lacinia
-      ligula, auctor auctor purus. Donec tincidunt facilisis ligula, ac molestie
-      dolor ornare ut. Phasellus convallis ante justo, at sodales lectus ornare
-      blandit. Suspendisse sit amet quam at dolor interdum scelerisque at ac
-      nunc. Duis nec erat ex. Maecenas eget felis eu justo tempus convallis non
-      ac erat.
+      tortor vestibulum tempus.
     </p>
-    <pre class="code code-dark">
-      #include &lt;stdio.h&gt;
-
-      int main() {
-        printf("Hello, world!");
-
-        return 0;
-      }
-    </pre>
-    <div class="message message-blue">
-      <strong>Information: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan dui.
-    </div>
     <section>
       <h3 id="chain_of_responsibility">
         <a href="#chain_of_responsibility">1.1. Chain of Responsibility</a>
@@ -119,11 +99,123 @@
         <a href="#command">1.2. Command</a>
       </h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
-        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
-        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
-        tortor vestibulum tempus.
+        The <strong>command</strong> design pattern goal is to provide means for encapsulating requests as objects and
+        decoupling the <strong>client</strong> that performs the request from the <strong>receiver</strong> that
+        processes the request. In order to achieve such goal, the <strong>client</strong> creates one or more
+        <strong>commands</strong> that are sent to an <strong>invoker</strong> and can be combined from simple single
+        command operations to complex multiple command operations that the invoker will execute and optionally keep
+        track of such execution.
       </p>
+      <h4 id="command_components">
+        <a href="#command_components">1.2.1. Components</a>
+      </h4>
+      <ul>
+        <li>
+          <strong>Client</strong>:
+          responsible for the request creation. It creates and parametrizes one or more command instances and sends them
+          to the invoker instance.
+          <pre class="code code-dark">
+<!--     -->  class Client
+<!--     -->  {
+<!--     -->      static void Main(string[] args)
+<!--     -->      {
+<!--     -->          var receiver = new Receiver();
+<!--     -->          var command = new Command(receiver);
+<!--     -->          var invoker = new Invoker(command);
+<!--     -->
+<!--     -->          invoker.Execute();
+<!--     -->      }
+<!--     -->  }
+<!--   --></pre>
+        </li>
+        <li>
+          <strong>Receiver</strong>:
+          responsible for the request processing. It receives parameters encapsulated within a command instance and
+          processes these parameters by executing its own logic.
+          <pre class="code code-dark">
+<!--     -->  class Receiver : IReceiver
+<!--     -->  {
+<!--     -->      public void Execute()
+<!--     -->      {
+<!--     -->          // Receiver logic
+<!--     -->      }
+<!--     -->  }
+<!--   --></pre>
+        </li>
+        <li>
+          <strong>Invoker</strong>:
+          responsible for executing one or more commands. It receives one or more command instances, executes them and
+          optionally keeps track of the execution if undo and redo functionallity is required.
+          <pre class="code code-dark">
+<!--     -->  class Invoker
+<!--     -->  {
+<!--     -->      private ICommand _command;
+<!--     -->
+<!--     -->      public Invoker(ICommand command)
+<!--     -->      {
+<!--     -->          _command = command;
+<!--     -->      }
+<!--     -->
+<!--     -->      public void Execute()
+<!--     -->      {
+<!--     -->          _command.Execute();
+<!--     -->      }
+<!--     -->  }
+<!--   --></pre>
+        </li>
+        <li>
+          <strong>Command</strong>:
+          responsible for receiving the receiver instance, the data required by the receiver and for calling the
+          receiver. It encapsulates the request passed by a client through input parameters as though the receiver that
+          will make use of these input parameteres, implements the actual logic for one or more actions that the
+          abstract command stabilished as its contract for dealing with the receiver, invokes the receiver and returns
+          the output parameters to the client that issued the request.
+          <pre class="code code-dark">
+<!--    -->  class Command : ICommand
+<!--    -->  {
+<!--    -->      private IReceiver _receiver;
+<!--    -->
+<!--    -->      public Command(IReceiver receiver)
+<!--    -->      {
+<!--    -->          _receiver = receiver;
+<!--    -->      }
+<!--    -->
+<!--    -->      public void Execute()
+<!--    -->      {
+<!--    -->          _receiver.Execute();
+<!--    -->      }
+<!--    -->  }
+<!--   --></pre>
+        </li>
+      </ul>
+      <h4 id="command_examples">
+        <a href="#command_examples">1.2.3. Examples</a>
+      </h4>
+      <ul>
+        <li>
+          <strong>Tracking of successfully and unsuccessfully executed operations.</strong>
+          The client may send one or more requests to the receiver via the invoker, which will execute the commands and
+          track the execution of successfully and unsuccessfully executed commands. A command is considered successfull
+          when validations on the receiver are applied and a positive result is returned. For further information, check
+          the <a href="./src/command/002_tracking_executed_operations/">source code.</a> for this example.
+        </li>
+        <li>
+          <strong>Undoing and Redoing execution.</strong>
+          The client may send one or more requests to the receiver via the invoker, which will execute the commands and
+          track the execution, so that commands can be done, undone and redone by a request from the client. For further
+          information, check the <a href="./src/command/003_undoing_and_redoing_execution/">source code.</a> for this
+          example.
+        </li>
+        <li>
+          <strong>Delaying execution.</strong>
+          The client may send one or more requests to the receiver via the invoker, which will track the requests for
+          later execution, so that commands can be executed later by a request from the client. For further information,
+          check the <a href="./src/command/004_delayed_execution/">source code.</a> for this example.
+        </li>
+      </ul>
+      <div class="message message-yellow">
+        <strong>TODO:</strong> WRITE EXAMPLES AND LINK TO SOURCE
+      </div>
     </section>
     <section>
       <h3 id="interpreter">
@@ -233,19 +325,63 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
       dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
       sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
-      tortor vestibulum tempus. Cras ac laoreet velit. In hac habitasse platea
-      dictumst. Pellentesque eu nisl vel tellus consequat fringilla imperdiet
-      sed lorem. Vestibulum aliquet erat vitae nibh hendrerit, at interdum ipsum
-      pretium. Nulla a facilisis elit, id tristique nisi. Vivamus in lacinia
-      ligula, auctor auctor purus. Donec tincidunt facilisis ligula, ac molestie
-      dolor ornare ut. Phasellus convallis ante justo, at sodales lectus ornare
-      blandit. Suspendisse sit amet quam at dolor interdum scelerisque at ac
-      nunc. Duis nec erat ex. Maecenas eget felis eu justo tempus convallis non
-      ac erat.
+      tortor vestibulum tempus.
     </p>
-    <div class="message message-yellow">
-      <strong>Warning: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan dui.
-    </div>
+    <section>
+      <h3 id="builder">
+        <a href="#builder">2.1. Builder</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="factory_class">
+        <a href="#factory_class">2.2. Factory Class</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="factory_method">
+        <a href="#factory_method">2.3. Factory Method</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="prototype">
+        <a href="#prototype">2.4. Prototype</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="singleton">
+        <a href="#singleton">2.5. Singleton</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
   </section>
   <section>
     <h2 id="structural">
@@ -255,20 +391,95 @@
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
       dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
       sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
-      tortor vestibulum tempus. Cras ac laoreet velit. In hac habitasse platea
-      dictumst. Pellentesque eu nisl vel tellus consequat fringilla imperdiet
-      sed lorem. Vestibulum aliquet erat vitae nibh hendrerit, at interdum ipsum
-      pretium. Nulla a facilisis elit, id tristique nisi. Vivamus in lacinia
-      ligula, auctor auctor purus. Donec tincidunt facilisis ligula, ac molestie
-      dolor ornare ut. Phasellus convallis ante justo, at sodales lectus ornare
-      blandit. Suspendisse sit amet quam at dolor interdum scelerisque at ac
-      nunc. Duis nec erat ex. Maecenas eget felis eu justo tempus convallis non
-      ac erat.
+      tortor vestibulum tempus.
     </p>
-    <div class="message message-red">
-      <strong>Danger: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan dui.
-    </div>
+    <section>
+      <h3 id="adapter">
+        <a href="#adapter">3.1. Adapter</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="bridge">
+        <a href="#bridge">3.2. Bridge</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="composite">
+        <a href="#composite">3.3. Composite</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="decorator">
+        <a href="#decorator">3.4. Decorator</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="facade">
+        <a href="#facade">3.5. Facade</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="flyweight">
+        <a href="#flyweight">3.6. Flyweight</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
+    <section>
+      <h3 id="proxy">
+        <a href="#proxy">3.7. Proxy</a>
+      </h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+        tortor vestibulum tempus.
+      </p>
+    </section>
   </section>
+  <div class="message message-blue">
+    <strong>Information: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan dui.
+  </div>
+  <div class="message message-yellow">
+    <strong>Warning: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan dui.
+  </div>
+  <div class="message message-red">
+    <strong>Danger: </strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan dui.
+  </div>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <span class="navbar-text">© 2020 MIT License</span>
   </nav>

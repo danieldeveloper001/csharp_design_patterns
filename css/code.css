@@ -4,9 +4,9 @@
  .code {
   border-radius: 10px;
   font-family: 'ubuntu-mono-regular', monospace;
-  font-size: 1.25em;
-  margin: 25px;
-  padding: 25px;
+  font-size: 1em;
+  margin: 15px;
+  padding: 15px;
 }
 
 .code-light {

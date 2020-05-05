@@ -1,1 +1,25 @@
+# DOTNET
+[Bb]in/
+[Dd]ebug/
+[Dd]ist/
+[Ll]og/
+[Oo]bj/
+[Pp]ackages/
+[Pp]ublish/
+[Rr]elease/
+[Tt]est[Rr]esult*/
+x64/
+x86/
+
+# DOCKER
+
+# NUGET
+*.nupkg
+
+# OTHER
+**/Properties/launchSettings.json
 TODO
+
+# TOOLS
+.vs/
+.vscode/
