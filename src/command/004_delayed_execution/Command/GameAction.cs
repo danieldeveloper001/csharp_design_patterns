@@ -24,7 +24,4 @@ namespace Project
 
         public void Execute() => GameElement.Move(DeltaX, DeltaY);
     }
-
-    //TODO: IMPLEMENT OTHER GAME ELEMENT ACTIONS
-
 }
