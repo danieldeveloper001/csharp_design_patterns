@@ -13,15 +13,15 @@ namespace Project.Repository
     {
         private Repository _repository;
 
-        public FooRepository(Repository repository)
+        public FooRepository()
         {
-            _repository = repository;
+            _repository = new Repository();
         }
 
         public Foo Insert(Foo foo) => _repository.InsertFoo(foo);
         public Foo Update(Foo foo) => _repository.UpdateFoo(foo);
         public Foo Delete(Foo foo) => _repository.DeleteFoo(foo);
-        public Foo FindById(int id) => _repository.FindByIdFoo(id);
+        public Foo FindById(Guid id) => _repository.FindByIdFoo(id);
         public Foo FindByName(string name) => _repository.FindByNameFoo(name);
 
     }

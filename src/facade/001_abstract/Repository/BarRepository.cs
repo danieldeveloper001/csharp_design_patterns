@@ -13,15 +13,15 @@ namespace Project.Repository
     {
         private Repository _repository;
 
-        public BarRepository(Repository repository)
+        public BarRepository()
         {
-            _repository = repository;
+            _repository = new Repository();
         }
 
         public Bar Insert(Bar bar) => _repository.InsertBar(bar);
         public Bar Update(Bar bar) => _repository.UpdateBar(bar);
         public Bar Delete(Bar bar) => _repository.DeleteBar(bar);
-        public Bar FindById(int id) => _repository.FindByIdBar(id);
+        public Bar FindById(Guid id) => _repository.FindByIdBar(id);
         public Bar FindByName(string name) => _repository.FindByNameBar(name);
 
     }

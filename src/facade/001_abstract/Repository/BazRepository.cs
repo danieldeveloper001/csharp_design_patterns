@@ -13,15 +13,15 @@ namespace Project.Repository
     {
         private Repository _repository;
 
-        public BazRepository(Repository repository)
+        public BazRepository()
         {
-            _repository = repository;
+            _repository = new Repository();
         }
 
         public Baz Insert(Baz baz) => _repository.InsertBaz(baz);
         public Baz Update(Baz baz) => _repository.UpdateBaz(baz);
         public Baz Delete(Baz baz) => _repository.DeleteBaz(baz);
-        public Baz FindById(int id) => _repository.FindByIdBaz(id);
+        public Baz FindById(Guid id) => _repository.FindByIdBaz(id);
         public Baz FindByName(string name) => _repository.FindByNameBaz(name);
 
     }

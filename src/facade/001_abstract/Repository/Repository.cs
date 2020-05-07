@@ -16,30 +16,30 @@ namespace Project.Repository
     */
     public class Repository
     {
-        private IList<Foo> _foo;
-        private IList<Bar> _bar;
-        private IList<Baz> _baz;
+        private static IList<Foo> _foo = new List<Foo>();
+        private static IList<Bar> _bar = new List<Bar>();
+        private static IList<Baz> _baz = new List<Baz>();
 
         public Foo InsertFoo(Foo foo)
         {
+            foo.Id = Guid.NewGuid();
             _foo.Add(foo);
-            foo.Id = _foo.IndexOf(foo);
 
             return foo;
         }
 
         public Bar InsertBar(Bar bar)
         {
+            bar.Id = Guid.NewGuid();
             _bar.Add(bar);
-            bar.Id = _bar.IndexOf(bar);
 
             return bar;
         }
 
         public Baz InsertBaz(Baz baz)
         {
+            baz.Id = Guid.NewGuid();
             _baz.Add(baz);
-            baz.Id = _baz.IndexOf(baz);
 
             return baz;
         }
@@ -47,68 +47,74 @@ namespace Project.Repository
         public Foo UpdateFoo(Foo foo)
         {
             var foundFoo = _foo.FirstOrDefault(x => x.Id == foo.Id);
+            if (foundFoo is null)
+                return null;
 
-            foo.Id = foundFoo.Id;
-            foundFoo = foo;
-
+            foundFoo.Name = foo.Name;
             return foundFoo;
         }
 
         public Bar UpdateBar(Bar bar)
         {
             var foundBar = _bar.FirstOrDefault(x => x.Id == bar.Id);
+            if (foundBar is null)
+                return null;
 
-            bar.Id = foundBar.Id;
-            foundBar = bar;
-
+            foundBar.Name = bar.Name;
             return foundBar;
         }
 
         public Baz UpdateBaz(Baz baz)
         {
             var foundBaz = _baz.FirstOrDefault(x => x.Id == baz.Id);
+            if (foundBaz is null)
+                return null;
 
-            baz.Id = foundBaz.Id;
-            foundBaz = baz;
-
+            foundBaz.Name = baz.Name;
             return foundBaz;
         }
 
         public Foo DeleteFoo(Foo foo)
         {
             var foundFoo = _foo.FirstOrDefault(x => x.Id == foo.Id);
-            _foo.Remove(foundFoo);
+            if (foundFoo is null)
+                return null;
 
+            _foo.Remove(foundFoo);
             return foundFoo;
         }
 
         public Bar DeleteBar(Bar bar)
         {
             var foundBar = _bar.FirstOrDefault(x => x.Id == bar.Id);
-            _bar.Remove(foundBar);
+            if (foundBar is null)
+                return null;
 
+            _bar.Remove(foundBar);
             return foundBar;
         }
 
         public Baz DeleteBaz(Baz baz)
         {
             var foundBaz = _baz.FirstOrDefault(x => x.Id == baz.Id);
-            _baz.Remove(foundBaz);
+            if (foundBaz is null)
+                return null;
 
+            _baz.Remove(foundBaz);
             return foundBaz;
         }
 
-        public Foo FindByIdFoo(int id)
+        public Foo FindByIdFoo(Guid id)
         {
             return _foo.FirstOrDefault(x => x.Id == id);
         }
 
-        public Bar FindByIdBar(int id)
+        public Bar FindByIdBar(Guid id)
         {
             return _bar.FirstOrDefault(x => x.Id == id);
         }
 
-        public Baz FindByIdBaz(int id)
+        public Baz FindByIdBaz(Guid id)
         {
             return _baz.FirstOrDefault(x => x.Id == id);
         }
