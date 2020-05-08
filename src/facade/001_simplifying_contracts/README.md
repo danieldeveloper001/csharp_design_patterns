@@ -1,4 +1,4 @@
-# 001_simplifying_contracts
+# Simplifying Contracts with Facade
 
 In this example, the facade pattern is used to refactor a contract with a large
 number of unrelated functionality into a more concise and cohese contract. For

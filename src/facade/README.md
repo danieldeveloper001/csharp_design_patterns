@@ -12,4 +12,4 @@ meaning).
 
 - [Simplifying Contracts][1]
 
-[1]: ./001_simplifying_contracts/README.md
+[1]: ./001_simplifying_contracts/
