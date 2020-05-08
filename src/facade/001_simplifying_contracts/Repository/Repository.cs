@@ -5,15 +5,6 @@ using Project.Model;
 
 namespace Project.Repository
 {
-    /*
-    This class is neither concise nor cohese, it provides the functionallity
-    that is necessary for handling 'foo', bar' and 'baz' classes and is a target
-    for facade classes, as such.
-
-    - FooRepository facade, for handling only Foo class.
-    - BarRepository facade, for handling only Bar class.
-    - BazRepository facade, for handling only Baz class.
-    */
     public class Repository
     {
         private static IList<Foo> _foo = new List<Foo>();

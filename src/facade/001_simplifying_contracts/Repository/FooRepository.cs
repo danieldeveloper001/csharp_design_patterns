@@ -5,10 +5,6 @@ using Project.Model;
 
 namespace Project.Repository
 {
-    /*
-    This class is a facade for the larger 'repository' class, it provides just
-    the functionallity that is necessary for handling 'foo' class.
-    */
     public class FooRepository
     {
         private Repository _repository;
