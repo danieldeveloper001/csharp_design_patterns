@@ -3,21 +3,47 @@ using System.Collections.Generic;
 
 namespace Project
 {
-    public class Waiter
+
+    public interface IWaiter
     {
-        private string _name;
-        private IList<Order> _orders;
+        string Name { get; }
+        IList<Order> TakenOrders { get; }
+
+        void TakeOrderFrom(ICustomer customer);
+        void SendOrdersTo(ICook cook);
+    }
+
+    public class Waiter : IWaiter
+    {
+        public string Name { get; private set; }
+        public IList<Order> TakenOrders { get; private set; }
 
         public Waiter(string name)
         {
-            _name = name;
-            _orders = new List<Order>();
+            Name = name;
+            TakenOrders = new List<Order>();
         }
 
-        public void TakeOrderFor(Customer customer)
+        public void TakeOrderFrom(ICustomer customer)
         {
-            Console.WriteLine($"[{nameof(Waiter)}] Hello, my name is {_name} and you will be my customer today!");
-            _orders.Add(customer.PlaceOrder());
+            Console.WriteLine($"[{nameof(Waiter)}] Hello, my name is {Name} and you will be my customer today!");
+            TakenOrders.Add(customer.PlaceOrder());
+        }
+
+        public void SendOrdersTo(ICook cook)
+        {
+            Console.WriteLine($"[{nameof(Waiter)}] Hello, {cook.Name}! I have some orders for you!");
+            foreach(var order in TakenOrders)
+            {
+                Console.WriteLine($"[{nameof(Waiter)}] - Customer {order.Customer.Name} wants...");
+                foreach (var item in order.Items)
+                    Console.WriteLine($"[{nameof(Waiter)}]   - {item.Amount} {item.AmountUnit} of {item.Name}");
+
+                // // TODO: SEND ORDERS TO COOK
+                // cook.PrepareOrder(order);
+            }
+
+
         }
     }
 }

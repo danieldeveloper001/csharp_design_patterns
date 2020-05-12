@@ -12,14 +12,14 @@ namespace Project
             var customer3 = new Customer("");
 
             var waiter = new Waiter("");
-            waiter.TakeOrderFor(customer1);
-            waiter.TakeOrderFor(customer2);
-            waiter.TakeOrderFor(customer3);
+            waiter.TakeOrderFrom(customer1);
+            waiter.TakeOrderFrom(customer2);
+            waiter.TakeOrderFrom(customer3);
 
-            // var cook = new Cook();
-            // waiter.SendOrdersTo(cook);
+            var cook = new Cook("");
+            waiter.SendOrdersTo(cook);
 
-            // cook.PrepareOrder();
+            cook.PrepareOrder();
             // cook.NotifyOrderReady(waiter);
             // waiter.NotifyOrderReady(customer);
 
