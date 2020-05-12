@@ -11,5 +11,7 @@ meaning).
 ## Examples
 
 - [Simplifying Contracts][1]
+- [Simplifying Consumption][2]
 
 [1]: ./001_simplifying_contracts/
+[2]: ./001_simplifying_consumption/
