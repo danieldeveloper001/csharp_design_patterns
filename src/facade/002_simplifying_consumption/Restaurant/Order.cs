@@ -18,6 +18,7 @@ namespace Project
         public Order(ICustomer customer)
         {
             Customer = customer;
+            Items = new List<IOrderItem>();
         }
 
         public void AddItem(IOrderItem item)

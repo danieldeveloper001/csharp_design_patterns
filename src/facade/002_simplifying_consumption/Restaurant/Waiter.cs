@@ -16,7 +16,8 @@ namespace Project
     public class Waiter : IWaiter
     {
         public string Name { get; private set; }
-        public IList<Order> TakenOrders { get; private set; }
+        public IList<Order> TakenOrders { get; private set; } // TODO: QUEUE
+        public IList<Order> ReadyOrders { get; private set; } // TODO: QUEUE
 
         public Waiter(string name)
         {
@@ -37,13 +38,10 @@ namespace Project
             {
                 Console.WriteLine($"[{nameof(Waiter)}] - Customer {order.Customer.Name} wants...");
                 foreach (var item in order.Items)
-                    Console.WriteLine($"[{nameof(Waiter)}]   - {item.Amount} {item.AmountUnit} of {item.Name}");
+                    Console.WriteLine($"[{nameof(Waiter)}]   - {item.Amount} {item.Unit} of {item.Name}");
 
-                // // TODO: SEND ORDERS TO COOK
                 // cook.PrepareOrder(order);
             }
-
-
         }
     }
 }

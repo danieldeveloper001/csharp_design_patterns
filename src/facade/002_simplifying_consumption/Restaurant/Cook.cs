@@ -6,7 +6,7 @@ namespace Project
     public interface ICook
     {
         string Name { get; }
-        void PrepareOrder();
+        void PrepareOrders();
     }
 
     public class Cook : ICook
@@ -18,7 +18,7 @@ namespace Project
             Name = name;
         }
 
-        public void PrepareOrder()
+        public void PrepareOrders()
         {
             throw new NotImplementedException();
         }
