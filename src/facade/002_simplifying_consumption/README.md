@@ -1,14 +1,14 @@
-# Simplifying Consumption with Facade
+# The Facade Restaurant
 
-In this example, the facade pattern is used to simplify related functionality
-consumption, by aggregating multiple method calls [...]. For the sake of keeping
-things simple, bear in mind that...
+**Facade Restaurant** makes use of the **facade design pattern** for simplifying functionality consumption by
+aggregating logic and method calls in methods with proper semantics that would otherwise be exposed to a client.
 
-- Topic1
-- Topic2
-- Topic3
+In this example, the **Restaurant** class acts as a **facade** to the client class **Program**, by using the **Serve**
+method to expose ready to use functionallity, that handles the inner working of the restaurant, such as...
 
-## FooFacade
-
-This class is a facade for the functionality exposed by `FooSomething`,
-`BarSomething`, and `BazSomething` classes.
+- Selecting a random cook (or in more complex cases an available one) to prepare the meal.
+- Selecting a random waiter (or in more complex cases an available one) to serve the customer.
+- Taking an order from the customer;
+- Sending the order to the cook;
+- Preparing the orders;
+- Delivering the orders;
