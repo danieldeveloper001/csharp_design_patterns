@@ -14,4 +14,4 @@ meaning).
 - [Simplifying Consumption][2]
 
 [1]: ./001_simplifying_contracts/
-[2]: ./001_simplifying_consumption/
+[2]: ./002_simplifying_consumption/
