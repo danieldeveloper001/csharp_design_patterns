@@ -5,9 +5,10 @@ namespace Project
 {
     public enum OrderItemUnit
     {
-        // TODO: IMPLEMENT UNITS
-        Unit1,
-        Unit2,
-        Unit3
+        Glass,
+        Cup,
+        Bottle,
+        Bowl,
+        Portion
     }
 }
