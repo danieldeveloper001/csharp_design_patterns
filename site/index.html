@@ -439,11 +439,48 @@
         <a href="#facade">3.5. Facade</a>
       </h3>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
-        dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
-        sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
-        tortor vestibulum tempus.
+        The <strong>facade</strong> design pattern goal is to provide means for creating easier to consume contracts. To
+        achieve such goal, it provides a concise and cohese set of operations that can consume functionality either from
+        large classes (in which case a subset of these operations will be consumed) or from multiple small classes (in
+        which case these operations will be aggregated into a single operation that by itself has a meaning).
       </p>
+      <h4 id="facade_components">
+        <a href="#facade_components">3.5.1. Components</a>
+      </h4>
+      <ul>
+        <li>
+          <strong>Facade</strong>:
+          responsible for the redesign and exposure of a consice and cohese set of operations composed from another
+          contract that are either large or sparse.
+          <pre class="code code-dark">
+      <!--     -->  class Facade
+      <!--     -->  {
+      <!--     -->      static void Main(string[] args)
+      <!--     -->      {
+      <!--     -->          var receiver = new Receiver();
+      <!--     -->          var command = new Command(receiver);
+      <!--     -->          var invoker = new Invoker(command);
+      <!--     -->
+      <!--     -->          invoker.Execute();
+      <!--     -->      }
+      <!--     -->  }
+      <!--   --></pre>
+        </li>
+      </ul>
+      <h4 id="facade_examples">
+        <a href="#facade_examples">1.2.3. Examples</a>
+      </h4>
+      <ul>
+        <li>
+          <strong>Example.</strong>
+
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In id accumsan
+          dui. Fusce vel turpis sed tortor porta pellentesque. Fusce at dui ut nulla
+          sollicitudin tempor. Nulla molestie porttitor vulputate. Etiam nec urna ut
+          tortor vestibulum tempus.
+          For further information, check the <a href="#">source code</a> for this example.
+        </li>
+      </ul>
     </section>
     <section>
       <h3 id="flyweight">
