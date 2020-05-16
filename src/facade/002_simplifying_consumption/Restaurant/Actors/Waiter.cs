@@ -9,20 +9,19 @@ namespace Project
     {
         string Name { get; }
 
-        Menu Menu { get; }
         Queue<IOrder> TakenOrders { get; }
         Queue<IOrder> ReadyOrders { get; }
 
-        void TakeOrder(ICustomer customer);
+        void DeliverOrders();
         void ReadyOrder(IOrder order);
         void SendOrdersTo(ICook cook);
+        void TakeOrder(ICustomer customer, Menu menu);
     }
 
     public class Waiter : IWaiter
     {
         public string Name { get; private set; }
 
-        public Menu Menu { get; private set; }
         public Queue<IOrder> TakenOrders { get; private set; }
         public Queue<IOrder> ReadyOrders { get; private set; }
 
@@ -33,27 +32,14 @@ namespace Project
             ReadyOrders = new Queue<IOrder>();
         }
 
-        public void AddMenu(Menu menu)
+        public void DeliverOrders()
         {
-            if (!(Menu is null))
-                return;
-
-            Menu = menu;
+            foreach(var order in ReadyOrders.ToList())
+            {
+                Console.WriteLine($"\n{nameof(Waiter),-10} {order.Customer.Name}, thank you very much for your patience, here is your order! Bon Apetit!");
+                order.Customer.ReceiveOrder(ReadyOrders.Dequeue());
+            }
         }
-
-        public void TakeOrder(ICustomer customer)
-        {
-            Console.WriteLine($"\n{nameof(Waiter),-10} Hello, my name is {Name} and you will be my customer today!");
-
-            //TODO: CONSIDER WHO SHOULD BE RESPONSIBLE FOR CREATING THE ORDER. WHO OWNS IT?
-            // - THE CUSTOMER 'ISSUES' AN ORDER
-            // - THE CUSTOMER 'TAKES' AN ORDER
-            var order = customer.PlaceOrder(Menu);
-
-            order.AddWaiter(this);
-            TakenOrders.Enqueue(order);
-        }
-
         public void ReadyOrder(IOrder order)
         {
             Console.WriteLine($"\n{nameof(Waiter),-10} Thank you very much, {order.Cook.Name}!");
@@ -74,13 +60,18 @@ namespace Project
             Console.WriteLine($"\n{nameof(Waiter),-10} Thank you very much, {cook.Name}! Ganbatte!");
         }
 
-        public void DeliverOrders()
+        public void TakeOrder(ICustomer customer, Menu menu)
         {
-            foreach(var order in ReadyOrders.ToList())
-            {
-                Console.WriteLine($"\n{nameof(Waiter),-10} {order.Customer.Name}, thank you very much for your patience, here is your order! Bon Apetit!");
-                order.Customer.ReceiveOrder(ReadyOrders.Dequeue());
-            }
+            Console.WriteLine($"\n{nameof(Waiter),-10} Hello, my name is {Name} and you will be my customer today!");
+
+            //TODO: CONSIDER WHO SHOULD BE RESPONSIBLE FOR CREATING THE ORDER. WHO OWNS IT?
+            // - THE CUSTOMER 'ISSUES' AN ORDER
+            // - THE CUSTOMER 'TAKES' AN ORDER
+            var order = customer.PlaceOrder(menu);
+
+            order.AddWaiter(this);
+            TakenOrders.Enqueue(order);
         }
+
     }
 }

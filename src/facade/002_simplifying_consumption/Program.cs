@@ -6,32 +6,22 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            // TODO: SOMETHING LIKE THIS BEFORE THE FACADE
-            var menu = new Menu();
+            var restaurant = new Restaurant();
 
-            var customer1 = new Customer("Kirito");
-            var customer2 = new Customer("Asuna");
-            var customer3 = new Customer("Shinon");
+            restaurant.AddMenu(new Menu());
 
-            var waiter = new Waiter("Maika");
-            waiter.AddMenu(menu);
-            waiter.TakeOrder(customer1);
-            waiter.TakeOrder(customer2);
-            waiter.TakeOrder(customer3);
+            restaurant.AddCook(new Cook("Dino"));
+            restaurant.AddCook(new Cook("Kōyō"));
 
-            var cook = new Cook("Dino");
-            waiter.SendOrdersTo(cook);
-            cook.PrepareOrders();
-            waiter.DeliverOrders();
+            restaurant.AddWaiter(new Waiter("Maika"));
+            restaurant.AddWaiter(new Waiter("Kaho"));
+            restaurant.AddWaiter(new Waiter("Mafuyu"));
+            restaurant.AddWaiter(new Waiter("Miu"));
+            restaurant.AddWaiter(new Waiter("Hideri"));
 
-            // cook.NotifyOrderReady(waiter);
-            // waiter.NotifyOrderReady(customer);
-
-            // TODO: SOMETHING LIKE THIS AFTER THE FACADE
-            // var customer = new Customer();
-            // var restaurant = new Restaurant();
-            // restaurant.Serve(customer);
-
+            restaurant.Serve(new Customer("Kirito"));
+            restaurant.Serve(new Customer("Asuna"));
+            restaurant.Serve(new Customer("Shinon"));
         }
     }
 }

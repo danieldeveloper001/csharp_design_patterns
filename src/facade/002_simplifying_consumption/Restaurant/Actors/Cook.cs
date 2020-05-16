@@ -43,10 +43,7 @@ namespace Project
 
         public void ReceiveOrder(IOrder order)
         {
-            Console.WriteLine();
-            if (ReceivedOrders.Count == 0)
-                Console.WriteLine($"{nameof(Cook),-10} Hello, my name is {Name} and I will be cooking the meals today!");
-            Console.WriteLine($"{nameof(Cook),-10} {order.Customer.Name}'s order will be prepared as requested, {order.Waiter.Name}!");
+            Console.WriteLine($"\n{nameof(Cook),-10} {order.Customer.Name}'s order will be prepared as requested, {order.Waiter.Name}!");
 
             order.AddCook(this);
             ReceivedOrders.Enqueue(order);
