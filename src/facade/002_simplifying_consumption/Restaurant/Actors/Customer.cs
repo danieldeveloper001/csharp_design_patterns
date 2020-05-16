@@ -9,6 +9,7 @@ namespace Project
         string Name { get; }
 
         Order PlaceOrder(Menu menu);
+        void ReceiveOrder(IOrder order);
     }
 
     public class Customer : ICustomer
@@ -42,5 +43,9 @@ namespace Project
             return order;
         }
 
+        public void ReceiveOrder(IOrder order)
+        {
+            Console.WriteLine($"\n{nameof(Customer),-10} {order.Waiter.Name}, thank you very much! Itadakimasu!");
+        }
     }
 }

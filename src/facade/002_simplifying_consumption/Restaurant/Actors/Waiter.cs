@@ -14,6 +14,7 @@ namespace Project
         Queue<IOrder> ReadyOrders { get; }
 
         void TakeOrder(ICustomer customer);
+        void ReadyOrder(IOrder order);
         void SendOrdersTo(ICook cook);
     }
 
@@ -29,6 +30,7 @@ namespace Project
         {
             Name = name;
             TakenOrders = new Queue<IOrder>();
+            ReadyOrders = new Queue<IOrder>();
         }
 
         public void AddMenu(Menu menu)
@@ -52,6 +54,12 @@ namespace Project
             TakenOrders.Enqueue(order);
         }
 
+        public void ReadyOrder(IOrder order)
+        {
+            Console.WriteLine($"\n{nameof(Waiter),-10} Thank you very much, {order.Cook.Name}!");
+            ReadyOrders.Enqueue(order);
+        }
+
         public void SendOrdersTo(ICook cook)
         {
             Console.WriteLine($"\n{nameof(Waiter),-10} Hello, {cook.Name}! I have some orders for you!");
@@ -61,8 +69,17 @@ namespace Project
                 foreach (var item in order.Items)
                     Console.WriteLine($"{nameof(Waiter),-10}   - {item.Description}");
 
-                cook.ReceiveOrder(order);
-                TakenOrders.Dequeue();
+                cook.ReceiveOrder(TakenOrders.Dequeue());
+            }
+            Console.WriteLine($"\n{nameof(Waiter),-10} Thank you very much, {cook.Name}! Ganbatte!");
+        }
+
+        public void DeliverOrders()
+        {
+            foreach(var order in ReadyOrders.ToList())
+            {
+                Console.WriteLine($"\n{nameof(Waiter),-10} {order.Customer.Name}, thank you very much for your patience, here is your order! Bon Apetit!");
+                order.Customer.ReceiveOrder(ReadyOrders.Dequeue());
             }
         }
     }

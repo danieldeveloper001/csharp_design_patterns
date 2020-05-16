@@ -21,8 +21,8 @@ namespace Project
 
             var cook = new Cook("Dino");
             waiter.SendOrdersTo(cook);
-
-            // cook.PrepareOrders();
+            cook.PrepareOrders();
+            waiter.DeliverOrders();
 
             // cook.NotifyOrderReady(waiter);
             // waiter.NotifyOrderReady(customer);
