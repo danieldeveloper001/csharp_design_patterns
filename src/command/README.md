@@ -30,9 +30,9 @@ parameters.
 ## Examples
 
 - [Abstract][2]
-- [Tracking Execution][3]
-- [Undoing and Redoing Execution][4]
-- [Delayed Execution][5]
+- [The Account Transaction (Tracking Execution)][3]
+- [The Text Editor (Undoing and Redoing Execution)][4]
+- [The Turn Based Game (Delayed Execution)][5]
 
 [1]: ../../
 [2]: ./001_abstract/
