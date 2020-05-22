@@ -1,11 +1,25 @@
 # Command
 
-[C# Design Patterns][1] > Command
-
 **Command** is a **behavioural design pattern** whose goal is to provide means for creating requests that may be
 trackable, undoable, redoable and delayed. In order to achieve such goal, requests are encapsulade in **Command**
 classes containing all the required data to process that request, such as the **Receiver** of the request and input
 parameters.
+
+## Components and Roles
+
+- **Client**
+  - Creates and parametrizes commands.
+  - Sends commands to the invoker.
+- **Command**
+  - Encapsulates the target receiver.
+  - Encapsulates the required data for processing the request at the target receiver.
+- **Invoker**
+  - Receives commands from the client.
+  - Keeps track of the execution.
+  - Sends commands to the target receiver.
+- **Receiver**
+  - Receives a request from the invoker.
+  - Processes a request.
 
 ## Benefits
 
@@ -26,16 +40,14 @@ parameters.
 - Increases complexity, since in simple scenarios a client could call and parametrize a receiver directly rather than
   through the invoker.
 
-
 ## Examples
 
-- [Abstract][2]
-- [The Account Transaction (Tracking Execution)][3]
-- [The Text Editor (Undoing and Redoing Execution)][4]
-- [The Turn Based Game (Delayed Execution)][5]
+- [Abstract][1]
+- [The Account Transaction (Tracking Execution)][2]
+- [The Text Editor (Undoing and Redoing Execution)][3]
+- [The Turn Based Game (Delayed Execution)][4]
 
-[1]: ../../
-[2]: ./001_abstract/
-[3]: ./002_tracking_executed_operations/
-[4]: ./003_undoing_and_redoing_execution/
-[5]: ./004_delayed_execution/
+[1]: ./001_abstract/
+[2]: ./002_tracking_executed_operations/
+[3]: ./003_undoing_and_redoing_execution/
+[4]: ./004_delayed_execution/
