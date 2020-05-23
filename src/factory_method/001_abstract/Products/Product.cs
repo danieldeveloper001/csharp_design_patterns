@@ -14,5 +14,8 @@ namespace Project
             Property2 = property2;
             Property3 = property3;
         }
+
+        public abstract void Action();
+
     }
 }
