@@ -31,6 +31,9 @@ method delegates the object creation responsibility to the subclasses that imple
 ## Drawbacks
 
 :construction: This section is under construction.
+- Requires a common abstract product definition - either a class or an interface - for concrete products creation, so
+  that the abstract creator can specify the contract for the concrete creators and, as such, it is not suitable if such
+  common contract doesn't exist.
 
 ## Examples
 
