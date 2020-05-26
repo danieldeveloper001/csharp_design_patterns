@@ -7,6 +7,6 @@ namespace Project
     {
         int Bonus { get; }
 
-        bool IsEquippable(IShip ship);
+        void ApplyTo(IShip ship);
     }
 }

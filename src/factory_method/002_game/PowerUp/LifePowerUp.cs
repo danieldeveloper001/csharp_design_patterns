@@ -9,14 +9,7 @@ namespace Project
 
         public LifePowerUp(int bonus) => Bonus = bonus;
 
-        public bool IsEquippable(IShip ship)
-        {
-            //TODO: RESOLVE MAGIC NUMBER '100' (MAX SHIP LIFE)
-            var isEquippable = ship.Life + Bonus <= 100;
-            if (!isEquippable)
-                Bonus = 100 - ship.Life;
-
-            return true;
-        }
+        public void ApplyTo(IShip ship)
+            => ship.Heal(Bonus);
     }
 }
