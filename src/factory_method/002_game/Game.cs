@@ -79,7 +79,7 @@ namespace Project
         {
             if (!ShouldHandle(chance))
             {
-                Console.WriteLine($"'{ship.Name}' did not receive powerups this round!!");
+                Console.WriteLine($"'{ship.Name}' did not receive powerups this round!");
                 return;
             }
 
