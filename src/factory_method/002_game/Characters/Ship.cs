@@ -18,7 +18,7 @@ namespace Project
             int life = 100,
             int shield = 50,
             int speed = 50,
-            int weapon = 500)
+            int weapon = 125)
         {
             Name = name;
             Life = life;
@@ -56,17 +56,22 @@ namespace Project
 
         public void Reload(int amount)
         {
-            Weapon = (amount + Weapon <= 1000) ? amount + Weapon : 1000;
+            Weapon = (amount + Weapon <= 250) ? amount + Weapon : 250;
         }
 
         public int Shoot(int amount)
         {
-            Weapon -= amount;
+            var weapon = Weapon;
+            weapon -= amount;
 
-            bool wasWeaponEnough = Weapon >= 0;
+            bool wasWeaponEnough = weapon >= 0;
             if (!wasWeaponEnough)
-                return amount - Math.Abs(Weapon);
+            {
+                Weapon = 0;
+                return amount - Math.Abs(weapon);
+            }
 
+            Weapon = weapon;
             return amount;
         }
 
