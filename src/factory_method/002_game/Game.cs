@@ -20,6 +20,7 @@ namespace Project
             {
                 new LifePowerUpFactory(),
                 new ShieldPowerUpFactory(),
+                new SpeedPowerUpFactory(),
                 new WeaponPowerUpFactory()
             };
         }
@@ -34,6 +35,7 @@ namespace Project
                 StatusFor(_player1);
                 StatusFor(_player2);
 
+                // TODO: MAKE PLAYER SPEED INTERFERE IN CHANCE
                 Console.WriteLine("\nBATTLE STATUS");
                 Console.WriteLine("=============");
                 HandleDamageFor(_player1, _player2, chance: 0.25);
