@@ -55,23 +55,47 @@ namespace Project
 
         public void Damage(int amount)
         {
-            if (_shield > 0)
+            bool hasShield = _shield > 0;
+            if (hasShield)
             {
-                bool hasEnoughShield = _shield < amount;
-                _shield -= hasEnoughShield ? amount : 0;
-
+                HandleShieldDamage(amount);
                 return;
             }
 
-            if (_life < amount)
-            {
-                _life = 0;
-                return;
-            }
-
-            _life -= amount;
+            HandleLifeDamage(amount);
         }
 
-        public bool IsAlive() => Life > 0;
+        public int Shoot(int amount)
+        {
+            _weapon -= amount;
+
+            bool wasWeaponEnough = _weapon >= 0;
+            if (!wasWeaponEnough)
+                return amount - Math.Abs(_weapon);
+
+            return amount;
+        }
+
+        private void HandleShieldDamage(int amount)
+        {
+            _shield -= amount;
+
+            bool wasShieldEnough = _shield >= 0;
+            if (!wasShieldEnough)
+            {
+                amount = Math.Abs(_shield);
+                _shield = 0;
+                HandleLifeDamage(amount);
+            }
+        }
+
+        private void HandleLifeDamage(int amount)
+        {
+            _life -= amount;
+
+            bool wasLifeEnough = _life >= 0;
+            if (!wasLifeEnough)
+                _life = 0;
+        }
     }
 }

@@ -9,9 +9,9 @@ namespace Project
             switch(level)
             {
                 case Level.Easy:
-                    return new LifePowerUp(bonus: 20);
+                    return new LifePowerUp(bonus: 50);
                 case Level.Medium:
-                    return new LifePowerUp(bonus: 10);
+                    return new LifePowerUp(bonus: 25);
                 case Level.Hard:
                     return new LifePowerUp(bonus: 5);
                 default:

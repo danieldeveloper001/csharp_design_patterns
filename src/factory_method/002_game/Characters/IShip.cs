@@ -15,5 +15,6 @@ namespace Project
 
         void PowerUp(IPowerUp powerUp);
         void Damage(int amount);
+        int Shoot(int amount);
     }
 }

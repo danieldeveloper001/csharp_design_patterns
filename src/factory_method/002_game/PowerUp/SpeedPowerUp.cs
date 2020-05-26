@@ -11,21 +11,11 @@ namespace Project
 
         public bool IsEquippable(IShip ship)
         {
-            var hasShieldPowerUp = ship.PowerUps.Any(p => p.GetType() == typeof(ShieldPowerUp));
-            if (hasShieldPowerUp)
-            {
-                Console.WriteLine($"[{ship.Name}] '{nameof(SpeedPowerUp)}' cannot be equipped altogether with {nameof(ShieldPowerUp)}!");
-                return false;
-            }
+            //TODO: RESOLVE MAGIC NUMBER '100' (MAX SHIP SPEED)
+            var isEquippable = ship.Speed + Bonus >= 100;
+            if (!isEquippable)
+                Bonus = 100 - ship.Speed;
 
-            var hasEnoughShield = ship.Speed + Bonus <= 100;
-            if (hasEnoughShield)
-            {
-                Console.WriteLine($"[{ship.Name}] '{nameof(SpeedPowerUp)}' cannot be equipped, current '{nameof(ship.Speed)}' is enough!");
-                return false;
-            }
-
-            Console.WriteLine($"[{ship.Name}] '{nameof(SpeedPowerUp)}' equipped!");
             return true;
         }
     }

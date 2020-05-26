@@ -9,7 +9,7 @@ namespace Project
             switch(level)
             {
                 case Level.Easy:
-                    return new ShieldPowerUp(bonus: 20);
+                    return new ShieldPowerUp(bonus: 15);
                 case Level.Medium:
                     return new ShieldPowerUp(bonus: 10);
                 case Level.Hard:

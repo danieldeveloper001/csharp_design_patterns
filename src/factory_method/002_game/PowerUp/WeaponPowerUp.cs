@@ -11,14 +11,11 @@ namespace Project
 
         public bool IsEquippable(IShip ship)
         {
-            var hasEnoughWeapon = ship.Weapon + Bonus <= 1000;
-            if (hasEnoughWeapon)
-            {
-                Console.WriteLine($"[{ship.Name}] '{nameof(WeaponPowerUp)}' cannot be equipped, current '{nameof(ship.Weapon)}' is enough!");
-                return false;
-            }
+            //TODO: RESOLVE MAGIC NUMBER '1000' (MAX SHIP WEAPON)
+            var isEquippable = ship.Weapon + Bonus <= 1000;
+            if (!isEquippable)
+                Bonus = 1000 - ship.Weapon;
 
-            Console.WriteLine($"[{ship.Name}] '{nameof(WeaponPowerUp)}' equipped!");
             return true;
         }
     }

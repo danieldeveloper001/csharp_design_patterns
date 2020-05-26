@@ -11,14 +11,11 @@ namespace Project
 
         public bool IsEquippable(IShip ship)
         {
-            var hasEnoughLife = ship.Life + Bonus <= 100;
-            if (hasEnoughLife)
-            {
-                Console.WriteLine($"[{ship.Name}] '{nameof(LifePowerUp)}' cannot be equipped, current '{nameof(ship.Life)}' is enough!");
-                return false;
-            }
+            //TODO: RESOLVE MAGIC NUMBER '100' (MAX SHIP LIFE)
+            var isEquippable = ship.Life + Bonus <= 100;
+            if (!isEquippable)
+                Bonus = 100 - ship.Life;
 
-            Console.WriteLine($"[{ship.Name}] '{nameof(LifePowerUp)}' equipped!");
             return true;
         }
     }

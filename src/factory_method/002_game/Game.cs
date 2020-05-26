@@ -20,7 +20,6 @@ namespace Project
             {
                 new LifePowerUpFactory(),
                 new ShieldPowerUpFactory(),
-                new StarPowerUpFactory(),
                 new WeaponPowerUpFactory()
             };
         }
@@ -32,8 +31,8 @@ namespace Project
                 HandlePowerUpFor(_playerShip, chance: 0.5);
                 HandlePowerUpFor(_enemyShip, chance: 0.25);
 
-                HandleDamageFor(_playerShip, chance: 0.25);
-                HandleDamageFor(_enemyShip, chance: 0.5);
+                HandleDamageFor(_playerShip, _enemyShip, chance: 0.25);
+                HandleDamageFor(_enemyShip, _playerShip, chance: 0.5);
 
                 StatusFor(_playerShip);
                 StatusFor(_enemyShip);
@@ -48,13 +47,14 @@ namespace Project
                 Console.WriteLine("Enemy Won!");
         }
 
-        private void HandleDamageFor(IShip ship, double chance)
+        private void HandleDamageFor(IShip shipToReceiveDamage, IShip shipToInflictDamage, double chance)
         {
             if (!ShouldHandle(chance))
                 return;
 
-            var damage = 5 * (new Random().Next(5) + 1);
-            ship.Damage(damage);
+            var expectedBullets = 5 * (new Random().Next(5) + 1);
+            var actualBullets = shipToInflictDamage.Shoot(expectedBullets);
+            shipToReceiveDamage.Damage(actualBullets);
         }
 
         private void HandlePowerUpFor(IShip ship, double chance)
