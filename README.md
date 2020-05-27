@@ -20,7 +20,7 @@ A repository for learning and teaching design patterns with the csharp language.
 
 - :clock12: Builder
 - :clock12: Factory Class
-- :clock12: Factory Method
+- :construction: [Factory Method](./src/factory_method/)
 - :clock12: Prototype
 - :clock12: Singleton
 
