@@ -38,5 +38,7 @@ method delegates the object creation responsibility to the subclasses that imple
 ## Examples
 
 - [Abstract][1]
+- [The Space Shooter Power Ups (Creating Objects with Shared Contract)][2]
 
 [1]: ./001_abstract/
+[2]: ./002_creating_objects_with_shared_contract/
