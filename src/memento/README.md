@@ -1,7 +1,8 @@
 # Memento
 
-**Memento** is a **behavioural design pattern** whose goal is to capture **state** of an object and to provide means for
-managing the state history and undoing such changes. In order to achieve such goal, the [...] :construction:
+**Memento** is a **behavioural design pattern** whose goal is to capture **state** of an object while preserving its
+encapsulation and to provide means for managing the state history and undoing such changes. In order to achieve such
+goal, the [...] :construction:
 
 ## Components and Roles
 
@@ -20,6 +21,7 @@ managing the state history and undoing such changes. In order to achieve such go
 ## Benefits
 
 :construction: This section is under construction.
+- Captures and restores object state while preserving encapsulation.
 -
 
 ## Drawbacks
