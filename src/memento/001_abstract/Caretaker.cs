@@ -5,17 +5,17 @@ namespace Project
 {
     public class Caretaker
     {
-        public Stack<Memento> Mementos { get; private set; }
+        public Stack<Memento> History { get; private set; }
 
         public Caretaker()
         {
-            Mementos = new Stack<Memento>();
+            History = new Stack<Memento>();
         }
 
         public void Capture(Memento memento) =>
-            Mementos.Push(memento);
+            History.Push(memento);
 
         public Memento Restore() =>
-            Mementos.Pop();
+            History.Pop();
     }
 }
