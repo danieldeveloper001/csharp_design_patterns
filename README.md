@@ -9,7 +9,7 @@ A repository for learning and teaching design patterns with the csharp language.
 - :clock12: Interpreter
 - :clock12: Iterator
 - :clock12: Mediator
-- :clock12: Memento
+- :construction: [Memento](./src/memento/)
 - :clock12: Observer
 - :clock12: State
 - :clock12: Strategy
