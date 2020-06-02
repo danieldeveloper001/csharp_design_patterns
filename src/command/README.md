@@ -1,9 +1,9 @@
 # Command
 
-**Command** is a **behavioural design pattern** whose goal is to provide means for creating requests that may be
-trackable, undoable, redoable and delayed. In order to achieve such goal, requests are encapsulade in **Command**
-classes containing all the required data to process that request, such as the **Receiver** of the request and input
-parameters.
+**Command** is a **behavioural design pattern** whose goal is to capture **requests** that changes the state of an
+object and to provide means for creating requests that may be trackable, undoable, redoable and delayed. In order to
+achieve such goal, requests are encapsulade in **Command** classes containing all the required data to process that
+request, such as the **Receiver** of the request and input parameters.
 
 ## Components and Roles
 
