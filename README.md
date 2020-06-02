@@ -7,7 +7,7 @@ A repository for learning and teaching design patterns with the csharp language.
 - :clock12: Chain of Responsibility
 - :construction: [Command](./src/command/)
 - :clock12: Interpreter
-- :clock12: Iterator
+- :construction: [Iterator](./src/iterator/)
 - :clock12: Mediator
 - :construction: [Memento](./src/memento/)
 - :clock12: Observer
