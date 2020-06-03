@@ -16,6 +16,9 @@ namespace Project
         {
             return new Iterator(this);
         }
+        public void SetData(string[] data)
+        {
+            Data = data;
+        }
     }
-
 }

@@ -8,6 +8,7 @@ namespace Project
         string[] Data { get; }
 
         IIterator GetIterator();
+        void SetData(string[] data);
     }
 
 }

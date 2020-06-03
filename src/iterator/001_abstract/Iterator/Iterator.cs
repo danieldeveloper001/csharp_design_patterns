@@ -4,7 +4,6 @@ namespace Project
 {
     public class Iterator : IIterator
     {
-
         private IIterable _iterable;
         private int _currentIndex;
         private int _firstIndex;
@@ -13,12 +12,19 @@ namespace Project
         public Iterator(IIterable iterable)
         {
             _iterable = iterable;
+            _currentIndex = -1;
             _firstIndex = 0;
             _lastIndex = _iterable.Data.Length - 1;
         }
 
+        public bool HasNext() =>
+            _currentIndex != _lastIndex;
+
         public string First() =>
             _iterable.Data[_firstIndex];
+
+        public string Last() =>
+            _iterable.Data[_lastIndex];
 
         public string Previous()
         {
@@ -35,9 +41,5 @@ namespace Project
 
             return _iterable.Data[_currentIndex];
         }
-
-        public string Last() =>
-            _iterable.Data[_lastIndex];
-
     }
 }
