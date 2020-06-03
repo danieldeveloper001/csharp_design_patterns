@@ -5,11 +5,11 @@ namespace Project
 
     public class Iterable : IIterable
     {
-        private string[] _data;
+        public string[] Data { get; private set; }
 
         public Iterable(int capacity)
         {
-            _data = new string[capacity];
+            Data = new string[capacity];
         }
 
         public IIterator GetIterator()
