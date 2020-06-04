@@ -14,24 +14,27 @@ namespace Project
             _iterable = iterable;
             _currentIndex = -1;
             _firstIndex = 0;
-            _lastIndex = _iterable.Data.Length - 1;
+            _lastIndex = _iterable.Count() - 1;
         }
+
+        public bool HasPrevious() =>
+            _currentIndex != _firstIndex;
 
         public bool HasNext() =>
             _currentIndex != _lastIndex;
 
         public string First() =>
-            _iterable.Data[_firstIndex];
+            _iterable.GetByIndex(_firstIndex);
 
         public string Last() =>
-            _iterable.Data[_lastIndex];
+            _iterable.GetByIndex(_lastIndex);
 
         public string Previous()
         {
             if (--_currentIndex < 0)
                 _currentIndex = 0;
 
-            return _iterable.Data[_currentIndex];
+            return _iterable.GetByIndex(_currentIndex);
         }
 
         public string Next()
@@ -39,7 +42,7 @@ namespace Project
             if (++_currentIndex > _lastIndex)
                 _currentIndex = _lastIndex;
 
-            return _iterable.Data[_currentIndex];
+            return _iterable.GetByIndex(_currentIndex);
         }
     }
 }

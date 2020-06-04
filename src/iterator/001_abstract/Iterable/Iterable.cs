@@ -5,20 +5,20 @@ namespace Project
 
     public class Iterable : IIterable
     {
-        public string[] Data { get; private set; }
+        private string[] _data;
 
-        public Iterable(int capacity)
+        public Iterable(string[] data)
         {
-            Data = new string[capacity];
+            _data = data;
         }
 
-        public IIterator GetIterator()
-        {
-            return new Iterator(this);
-        }
-        public void SetData(string[] data)
-        {
-            Data = data;
-        }
+        public int Count() =>
+            _data.Length;
+
+        public string GetByIndex(int index) =>
+            _data[index];
+
+        public IIterator GetIterator() =>
+            new Iterator(this);
     }
 }

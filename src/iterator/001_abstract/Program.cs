@@ -6,8 +6,7 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            var iterable = new Iterable(10);
-            iterable.SetData(
+            var iterable = new Iterable(
                 new string[] { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" });
 
             var iterator = iterable.GetIterator();
@@ -15,7 +14,13 @@ namespace Project
             Console.WriteLine($"Last Item: {iterator.Last()}");
 
             while(iterator.HasNext())
-                Console.WriteLine($"Item: {iterator.Next()}");
+                Console.WriteLine($"> {iterator.Next()}");
+
+            while(iterator.HasPrevious())
+                Console.WriteLine($"< {iterator.Previous()}");
+
+            while(iterator.HasNext())
+                Console.WriteLine($"> {iterator.Next()}");
         }
     }
 }

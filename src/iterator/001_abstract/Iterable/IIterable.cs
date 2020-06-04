@@ -2,13 +2,10 @@ using System;
 
 namespace Project
 {
-
     public interface IIterable
     {
-        string[] Data { get; }
-
+        int Count();
+        string GetByIndex(int index);
         IIterator GetIterator();
-        void SetData(string[] data);
     }
-
 }
