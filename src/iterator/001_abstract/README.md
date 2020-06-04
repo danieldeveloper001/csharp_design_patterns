@@ -2,11 +2,6 @@
 
 **The Abstract Example** makes use of the **iterator design pattern** to demonstrate how the **iterator** serve the
 purpose of handling navigation logic for a collection of elements stored at the **iterable** by using a bidirectional
-navigation iterator.
-
-
-
-
- specifying a contract by using an **abstract product** so that **concrete creators** can create
-**concrete products**. In addition to that, a sample action is provided and invoked at the **client**, that is decoupled
-from the concrete products themselves, as though from their creation logic.
+navigation iterator. In addition to that, methods for directly accessing the first and last element of the collection
+are provided to demonstrate that an iterator can have direct access to elements without affecting the current iteration
+state.
