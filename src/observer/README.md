@@ -29,10 +29,12 @@ tipically used in event driven applications where notifications are issued from 
 ## Benefits
 
 :construction: This section is under construction.
+-
 
 ## Drawbacks
 
-:construction: This section is under construction.
+- Increases debugging difficult because state updates on the subject will trigger state updates on the observers.
+- Impacts performance when state update means executing heavyweight operations through a multiple observers.
 
 ## Examples
 
