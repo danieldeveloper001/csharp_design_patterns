@@ -1,0 +1,3 @@
+# The Abstract Example
+
+**The Abstract Example** makes use of the **observer design pattern** to ...

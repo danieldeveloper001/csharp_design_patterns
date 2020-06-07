@@ -1,0 +1,3 @@
+# The Practical Example
+
+**The Practical Example** makes use of the **observer design pattern** to ...
