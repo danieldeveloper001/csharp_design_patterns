@@ -14,7 +14,7 @@ tipically used in event driven applications where notifications are issued from 
   - Provides notify method contract
 - **Subject (concrete)**
   - Implements the contract from the abstract subject
-  - Implements accessor methods for the encapsulated subject state (optional)
+  - Implements accessor methods for the encapsulated subject state
   - Implements attaching method logic targeting an abstract observer
   - Implements detaching method logic targeting an abstract observer
   - Implements notify method logic
@@ -23,7 +23,7 @@ tipically used in event driven applications where notifications are issued from 
   - Provides update state method contract
 - **Observer (concrete)**
   - Implements the contract from the abstract observer
-  - Implements accessor methods for the encapsulated observer state (optional)
+  - Implements accessor methods for the encapsulated observer state
   - Implements update state method logic
 
 ## Benefits

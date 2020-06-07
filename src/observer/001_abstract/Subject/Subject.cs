@@ -29,8 +29,7 @@ namespace Project
 
         public void Notify()
         {
-            foreach (var observer in Observers)
-                observer.Update(Property1, Property2, Property3);
+            Observers.ForEach(o => o.Update());
         }
 
         public void Update(string property1, int property2, bool property3)

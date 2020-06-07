@@ -6,11 +6,12 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            var observer1 = new Observer();
-            var observer2 = new Observer();
-            var observer3 = new Observer();
-
             var subject = new Subject();
+
+            var observer1 = new Observer(subject);
+            var observer2 = new Observer(subject);
+            var observer3 = new Observer(subject);
+
             subject.Attach(observer1);
             subject.Attach(observer2);
             subject.Attach(observer3);
