@@ -23,6 +23,11 @@ namespace Project
 
             subject.Update("value 3", 3, true);
             subject.Update("value 4", 4, false);
+            subject.Notify();
+
+            subject.Detach(observer2);
+            subject.Detach(observer3);
+
             subject.Update("value 5", 5, true);
             subject.Notify();
         }
