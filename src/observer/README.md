@@ -28,8 +28,11 @@ tipically used in event driven applications where notifications are issued from 
 
 ## Benefits
 
-:construction: This section is under construction.
--
+- Creates a notification mechanism between subject and observers.
+  - Changes to the subject state may trigger notifications to the observers.
+  - Changes to the subject state may affect observers state.
+- Decouples subject from one or more observers.
+- Decouples observers from one or more observers.
 
 ## Drawbacks
 
