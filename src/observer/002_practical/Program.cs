@@ -18,14 +18,12 @@ namespace Project
             menu.AddOption(new AchievementsMenuOption());
             menu.AddOption(new ExitMenuOption());
 
-            int option;
             do
             {
                 menu.Display();
-                option = menu.ReadOption();
+                var option = menu.ReadOption();
                 menu.Execute(option, player);
                 menu.Wait();
-
             } while (true);
         }
     }
