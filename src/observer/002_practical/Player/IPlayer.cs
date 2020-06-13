@@ -5,10 +5,10 @@ namespace Project
 {
     public interface IPlayer
     {
-        IList<IAchievement> Achievements { get; }
-        IList<string> Artifacts { get; }
+        IList<Achievement> Achievements { get; }
         int Distance { get; }
         int Experience { get; }
+        IList<string> Inventory { get; }
         int Money { get; }
 
         void Buy(string artifact, int price);

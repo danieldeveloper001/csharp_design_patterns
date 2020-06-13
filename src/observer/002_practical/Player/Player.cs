@@ -5,21 +5,22 @@ namespace Project
 {
     public class Player : IPlayer
     {
-        public IList<IAchievement> Achievements { get; private set; }
-        public IList<string> Artifacts { get; private set; }
+        public IList<Achievement> Achievements { get; private set; }
         public int Distance { get; private set; }
         public int Experience { get; private set; }
+        public IList<string> Inventory { get; private set; }
         public int Money { get; private set; }
 
         public Player()
         {
-            Achievements = new List<IAchievement>()
+            Achievements = new List<Achievement>()
             {
                 new Killer(),
                 new Saver(),
                 new Spender(),
                 new Traveler()
             };
+            Inventory = new List<string>();
 
             Distance = 0;
             Experience = 0;
@@ -35,6 +36,7 @@ namespace Project
         public void Buy(string artifact, int price)
         {
             Money -= price;
+            Inventory.Add(artifact);
             ProcessAchievements();
         }
 
@@ -47,6 +49,7 @@ namespace Project
         public void Sell(string artifact, int price)
         {
             Money += price;
+            Inventory.Remove(artifact);
             ProcessAchievements();
         }
 
