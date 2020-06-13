@@ -2,20 +2,9 @@ using System;
 
 namespace Project
 {
-    public class Traveler : IAchievement
+    public class Traveler : Achievement
     {
-        public bool IsAchieved { get; private set; }
-
-        public void Update(IPlayer player)
-        {
-            if (IsAchieved)
-                return;
-
-            if (player.Distance < 100)
-                return;
-
-            Console.WriteLine($"\n[{nameof(Traveler)}] achievement unlocked!");
-            IsAchieved = true;
-        }
+        protected override bool IsAchievedBy(IPlayer player) =>
+            player.Distance >= 100;
     }
 }

@@ -2,20 +2,9 @@ using System;
 
 namespace Project
 {
-    public class Spender : IAchievement
+    public class Spender : Achievement
     {
-        public bool IsAchieved { get; private set; }
-
-        public void Update(IPlayer player)
-        {
-            if (IsAchieved)
-                return;
-
-            if (player.Money > 0)
-                return;
-
-            Console.WriteLine($"\n[{nameof(Spender)}] achievement unlocked!");
-            IsAchieved = true;
-        }
+        protected override bool IsAchievedBy(IPlayer player) =>
+            player.Money <= 0;
     }
 }
