@@ -6,8 +6,8 @@ namespace Project
     {
         protected override void MenuOptionAction(IPlayer player)
         {
-            player.Walk(Program.WALK_DISTANCE);
-            Console.WriteLine($"\n{Program.WALK_DISTANCE} distances walked!");
+            player.Walk(Settings.WALK_DISTANCE);
+            Console.WriteLine($"\n{Settings.WALK_DISTANCE} distances walked!");
             Console.WriteLine($"{player.Distance} distances walked in total!");
         }
 

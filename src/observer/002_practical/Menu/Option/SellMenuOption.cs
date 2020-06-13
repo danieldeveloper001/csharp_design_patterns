@@ -6,11 +6,11 @@ namespace Project
     {
         protected override void MenuOptionAction(IPlayer player)
         {
-            var sold = player.Sell(Program.ARTIFACT_NAME, Program.ARTIFACT_PRICE);
+            var sold = player.Sell(Settings.ARTIFACT_NAME, Settings.ARTIFACT_PRICE);
             if (!sold)
                 return;
 
-            Console.WriteLine($"\n{Program.ARTIFACT_NAME} sold! {Program.ARTIFACT_PRICE} moneys added to wallet!");
+            Console.WriteLine($"\n{Settings.ARTIFACT_NAME} sold! {Settings.ARTIFACT_PRICE} moneys added to wallet!");
             Console.WriteLine($"{player.Money} moneys in wallet!");
         }
 

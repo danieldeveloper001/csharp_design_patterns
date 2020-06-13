@@ -6,8 +6,8 @@ namespace Project
     {
         protected override void MenuOptionAction(IPlayer player)
         {
-            player.Kill(Program.MONSTER_NAME, Program.MONSTER_LEVEL);
-            Console.WriteLine($"\n{Program.MONSTER_NAME} killed! {Program.MONSTER_LEVEL} experiences gained!");
+            player.Kill(Settings.MONSTER_NAME, Settings.MONSTER_LEVEL);
+            Console.WriteLine($"\n{Settings.MONSTER_NAME} killed! {Settings.MONSTER_LEVEL} experiences gained!");
             Console.WriteLine($"{player.Experience} experiences gained in total!");
         }
 

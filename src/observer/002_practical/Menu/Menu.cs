@@ -36,7 +36,7 @@ namespace Project
             _options.First().Execute(option, player);
         }
 
-        public int ReadAction()
+        public int ReadOption()
         {
             Console.Write("\nWhat would you like to do? ");
             var action = Console.ReadKey();

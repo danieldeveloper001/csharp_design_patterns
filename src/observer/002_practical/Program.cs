@@ -5,12 +5,6 @@ namespace Project
 {
     public class Program
     {
-        public static String ARTIFACT_NAME = "ARTIFACT";
-        public static int ARTIFACT_PRICE = 25;
-        public static String MONSTER_NAME = "MONSTER";
-        public static int MONSTER_LEVEL = 5;
-        public static int WALK_DISTANCE = 10;
-
         static void Main(string[] args)
         {
             var player = new Player();
@@ -28,7 +22,7 @@ namespace Project
             do
             {
                 menu.Display();
-                option = menu.ReadAction();
+                option = menu.ReadOption();
                 menu.Execute(option, player);
                 menu.Wait();
 

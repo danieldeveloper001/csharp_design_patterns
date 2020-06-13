@@ -11,3 +11,6 @@ has been achieved or not. During the notification process, three scenarios are p
 Since each kind of achievement depends upon different conditions being met by the player, a common interface is
 stabilished between them, so that all achievements can be uniformely processed and the player unaware of each
 achievement logic implementation.
+
+:warning: This example has some hardcoded constants at the **program** class whose implementation logic is out of the
+scope (ex.: buying and selling different artifacts, monster ).
