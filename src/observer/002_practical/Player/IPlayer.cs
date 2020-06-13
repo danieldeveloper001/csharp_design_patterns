@@ -11,9 +11,9 @@ namespace Project
         IList<string> Inventory { get; }
         int Money { get; }
 
-        void Buy(string artifact, int price);
+        bool Buy(string artifact, int price);
         void Kill(string monster, int level);
-        void Sell(string artifact, int price);
+        bool Sell(string artifact, int price);
         void Walk(int distance);
     }
 }

@@ -42,12 +42,18 @@ namespace Project
                         Console.WriteLine($"{player.Distance} distances walked in total!");
                         break;
                     case '2':
-                        player.Buy(ARTIFACT_NAME, ARTIFACT_PRICE);
+                        var bought = player.Buy(ARTIFACT_NAME, ARTIFACT_PRICE);
+                        if (!bought)
+                            continue;
+
                         Console.WriteLine($"\n{ARTIFACT_NAME} bought! {ARTIFACT_PRICE} moneys removed from wallet!");
                         Console.WriteLine($"{player.Money} moneys in wallet!");
                         break;
                     case '3':
-                        player.Sell(ARTIFACT_NAME, ARTIFACT_PRICE);
+                        var sold = player.Sell(ARTIFACT_NAME, ARTIFACT_PRICE);
+                        if (!sold)
+                            continue;
+
                         Console.WriteLine($"\n{ARTIFACT_NAME} sold! {ARTIFACT_PRICE} moneys added to wallet!");
                         Console.WriteLine($"{player.Money} moneys in wallet!");
                         break;

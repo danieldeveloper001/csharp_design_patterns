@@ -34,28 +34,37 @@ namespace Project
             ProcessAchievements();
         }
 
-        public void Buy(string artifact, int price)
+        public bool Buy(string artifact, int price)
         {
+            if (Money <= 0)
+                return false;
+
             Money -= price;
             Inventory.Add(artifact);
             ProcessAchievements();
+
+            return true;
         }
 
         public void Kill(string monster, int level)
         {
             Experience += level;
+            Money += level;
+
             ProcessAchievements();
         }
 
-        public void Sell(string artifact, int price)
+        public bool Sell(string artifact, int price)
         {
             var artifactToRemove = Inventory.FirstOrDefault(x => x == artifact);
             if (String.IsNullOrWhiteSpace(artifactToRemove))
-                return;
+                return false;
 
             Money += price;
             Inventory.Remove(artifactToRemove);
             ProcessAchievements();
+
+            return true;
         }
 
         private void ProcessAchievements()
