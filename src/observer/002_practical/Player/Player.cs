@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Project
 {
@@ -48,8 +49,12 @@ namespace Project
 
         public void Sell(string artifact, int price)
         {
+            var artifactToRemove = Inventory.FirstOrDefault(x => x == artifact);
+            if (String.IsNullOrWhiteSpace(artifactToRemove))
+                return;
+
             Money += price;
-            Inventory.Remove(artifact);
+            Inventory.Remove(artifactToRemove);
             ProcessAchievements();
         }
 
