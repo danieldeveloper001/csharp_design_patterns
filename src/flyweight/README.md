@@ -1,26 +1,32 @@
 # Flyweight
 
-**Flyweight** is a **structural design pattern** design pattern whose goal is to allow multiple object instances with
-changing data (extrinsic state) to refer to a single shared object instance that holds unchanging data (intrinsic state)
-so that resources can be used more efficiently.
+**Flyweight** is a **structural design pattern** whose goal is to allow multiple object instances to share unchanging
+data (intrinsic state) while still being able to perform operations involving changing data (extrinsic state) so that
+computing resources can be used more efficiently. Such instances are created and managed within a cache so that they
+can be created by demand and only once during the application's lifecycle.
 
 ## Components and Roles
 
-:construction: This section is under construction.
-
 - **Flyweight (abstract)**
-  -
+  - Creates the contract for concrete flyweights
+    - Contract may include intrinsic state that is write once, read many
+    - Contract may include operations that deal with intrinsic and extrinsic state
 - **Flyweight (concrete)**
-  - holds the intrinsic state
-  - implements operations that receives extrinsic state and perform some action with the intrinsic and extrinsic state
+  - Implements the contract from abstract flyweight
+    - Implementation may include intrinsic state that is write once, read many
+    - Implementation may include operations that deal with intrinsic and extrinsic state
 - **FlyweightFactory**
-  - creates and manages a cache of object instances containing intrinsic state
+  - Creates concrete flyweight instances
+    - Creation may be on demand
+    - Creation may be cached
 - **Client**
-  - consumes the flyweights through the flyweight factory
+  - Consumes concrete flyweights through the flyweight factory
 
 ## Benefits
 
-:construction: This section is under construction.
+- Allows sharing of intrinsic state which behaves like a immutable portion of a given object state that can be written
+  once but read many.
+- Reduces computing resources usage, since instances are created on demand and only once
 
 ## Drawbacks
 
