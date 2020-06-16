@@ -2,8 +2,9 @@
 
 **Flyweight** is a **structural design pattern** whose goal is to allow multiple object instances to share unchanging
 data (intrinsic state) while still being able to perform operations involving changing data (extrinsic state) so that
-computing resources can be used more efficiently. Such instances are created and managed within a cache so that they
-can be created by demand and only once during the application's lifecycle.
+computing resources can be used more efficiently. Such instances that contain only intrinsic state are cached and are
+created and managed within a cache so that they can be created on demand and only once during the application's
+lifecycle.
 
 ## Components and Roles
 
