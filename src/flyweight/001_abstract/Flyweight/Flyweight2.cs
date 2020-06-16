@@ -4,18 +4,17 @@ namespace Project
 {
     public class Flyweight2 : IFlyweight
     {
-        private string _intrinsicState;
-        public string IntrinsicState { get { return _intrinsicState; } }
+        public string IntrinsicState { get; private set; }
 
         public Flyweight2()
         {
-            _intrinsicState = $"Intrinsic State of {nameof(Flyweight2)}";
+            IntrinsicState = $"Intrinsic State of {nameof(Flyweight2)}";
         }
 
         public void Operation(string extrinsicState)
         {
             Console.WriteLine($"{nameof(Flyweight2)}");
-            Console.WriteLine($"- Intrinsic State: {_intrinsicState}");
+            Console.WriteLine($"- Intrinsic State: {IntrinsicState}");
             Console.WriteLine($"- Extrinsic State: {extrinsicState}");
         }
     }
