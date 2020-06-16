@@ -24,8 +24,6 @@ can be created by demand and only once during the application's lifecycle.
 
 ## Benefits
 
-- Allows sharing of intrinsic state which behaves like a immutable portion of a given object state that can be written
-  once but read many.
 - Reduces computing resources usage, since instances are created on demand and only once
 
 ## Drawbacks
