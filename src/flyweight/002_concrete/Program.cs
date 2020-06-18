@@ -9,7 +9,7 @@ namespace Project
         {
             var mapBlockFactory = new MapBlockFactory();
 
-            using (var reader = new StreamReader("./Maps/Level3.txt"))
+            using (var reader = new StreamReader("./Maps/Level1.txt"))
             {
                 Console.Clear();
 
