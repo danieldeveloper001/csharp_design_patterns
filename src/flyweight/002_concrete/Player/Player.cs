@@ -8,6 +8,13 @@ namespace Project
         public int X { get; private set; }
         public int Y { get; private set; }
 
+        public void Draw()
+        {
+            Console.SetCursorPosition(X, Y);
+            Console.ForegroundColor = ConsoleColor.Black;
+            Console.Write("☺");
+        }
+
         public void MoveUp()
         {
             if(Y > 0) Y--;

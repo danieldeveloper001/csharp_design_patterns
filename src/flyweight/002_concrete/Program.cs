@@ -39,10 +39,7 @@ namespace Project
                     Console.WriteLine($"\n{message, 50}");
                 }
 
-                //TODO: REFACTOR
-                Console.SetCursorPosition(player.X, player.Y);
-                Console.ForegroundColor = ConsoleColor.Black;
-                Console.Write("\u263A");
+                player.Draw();
 
                 var key = Console.ReadKey();
                 switch(key.Key)
