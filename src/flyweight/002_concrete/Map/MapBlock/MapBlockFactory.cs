@@ -14,25 +14,20 @@ namespace Project
 
         public IMapBlock GetMapBlock(char mapBlockType)
         {
-            if (!_mapBlocks.ContainsKey(mapBlockType))
-            {
-                switch(mapBlockType)
-                {
-                    case 'A':
-                        _mapBlocks[mapBlockType] = new LandBlock();
-                        break;
-                    case 'B':
-                        _mapBlocks[mapBlockType] = new SandBlock();
-                        break;
-                    case 'C':
-                        _mapBlocks[mapBlockType] = new WaterBlock();
-                        break;
-                    default:
-                        throw new ArgumentException("Invalid block type.");
-                }
-            }
+            if (_mapBlocks.ContainsKey(mapBlockType))
+                return _mapBlocks[mapBlockType];
 
-            return _mapBlocks[mapBlockType];
+            switch(mapBlockType)
+            {
+                case 'A':
+                    return _mapBlocks[mapBlockType] = new LandBlock();
+                case 'B':
+                    return _mapBlocks[mapBlockType] = new SandBlock();
+                case 'C':
+                    return _mapBlocks[mapBlockType] = new WaterBlock();
+                default:
+                    throw new ArgumentException("Invalid block type.");
+            }
         }
     }
 }
