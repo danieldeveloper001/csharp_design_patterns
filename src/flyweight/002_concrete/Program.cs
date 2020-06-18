@@ -7,11 +7,10 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            var player = new Player();
-            var mapBlockFactory = new MapBlockFactory();
-
             ConsoleSetup();
 
+            var player = new Player();
+            var mapBlockFactory = new MapBlockFactory();
             do
             {
                 //TODO: IN MEMORY MAP
