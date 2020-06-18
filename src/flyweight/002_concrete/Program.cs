@@ -7,15 +7,10 @@ namespace Project
     {
         static void Main(string[] args)
         {
+            var player = new Player();
             var mapBlockFactory = new MapBlockFactory();
 
-            //TODO: REFACTOR
-            var playerX = 0;
-            var playerY = 0;
-
-            Console.Clear();
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
-            Console.CursorVisible = false;
+            ConsoleSetup();
 
             do
             {
@@ -32,7 +27,7 @@ namespace Project
                             var block = mapBlockFactory.GetMapBlock(column);
                             block.Draw(columnIndex, rowIndex);
 
-                            if (playerX == columnIndex && playerY == rowIndex)
+                            if (player.X == columnIndex && player.Y == rowIndex)
                                 currentBlockDescription = block.Description;
 
                             columnIndex++;
@@ -46,7 +41,7 @@ namespace Project
                 }
 
                 //TODO: REFACTOR
-                Console.SetCursorPosition(playerX, playerY);
+                Console.SetCursorPosition(player.X, player.Y);
                 Console.ForegroundColor = ConsoleColor.Black;
                 Console.Write("\u263A");
 
@@ -54,30 +49,38 @@ namespace Project
                 switch(key.Key)
                 {
                     case ConsoleKey.UpArrow:
-                        if(playerY > 0)
-                            playerY--;
+                        player.MoveUp();
                         break;
                     case ConsoleKey.DownArrow:
-                        if(playerY < 25)
-                            playerY++;
+                        player.MoveDown();
                         break;
                     case ConsoleKey.LeftArrow:
-                        if(playerX > 0)
-                            playerX--;
+                        player.MoveLeft();
                         break;
                     case ConsoleKey.RightArrow:
-                        if(playerX < 50)
-                            playerX++;
+                        player.MoveRight();
                         break;
                     case ConsoleKey.Escape:
-                        Console.Clear();
-                        Console.CursorVisible = true;
+                        ConsoleTeardown();
                         Environment.Exit(0);
                         break;
                     default:
                         break;
                 }
             } while(true);
+        }
+
+        private static void ConsoleSetup()
+        {
+            Console.Clear();
+            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.CursorVisible = false;
+        }
+
+        private static void ConsoleTeardown()
+        {
+            Console.Clear();
+            Console.CursorVisible = true;
         }
     }
 }
