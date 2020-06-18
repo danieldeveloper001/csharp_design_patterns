@@ -22,6 +22,7 @@ namespace Project
                 //TODO: IN MEMORY MAP
                 using (var reader = new StreamReader("./Maps/Level1.txt"))
                 {
+                    var currentBlockDescription = String.Empty;
                     var rowIndex = 0;
                     while (reader.ReadLine() is string row)
                     {
@@ -31,11 +32,17 @@ namespace Project
                             var block = mapBlockFactory.GetMapBlock(column);
                             block.Draw(columnIndex, rowIndex);
 
+                            if (playerX == columnIndex && playerY == rowIndex)
+                                currentBlockDescription = block.Description;
+
                             columnIndex++;
                         }
 
                         rowIndex++;
                     }
+                    var message = $"Player is currently at a {currentBlockDescription}";
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine($"\n{message, 50}");
                 }
 
                 //TODO: REFACTOR
