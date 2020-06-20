@@ -21,7 +21,7 @@ namespace Project
 
         public void MoveDown()
         {
-            if(Row < Settings.MAP_ROWS - 1) Row++;
+            if(Row < Settings.GAME_ROWS - 1) Row++;
         }
 
         public void MoveLeft()
@@ -31,7 +31,7 @@ namespace Project
 
         public void MoveRight()
         {
-            if(Column < Settings.MAP_COLUMNS - 1) Column++;
+            if(Column < Settings.GAME_COLUMNS - 1) Column++;
         }
     }
 }

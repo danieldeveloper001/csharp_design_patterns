@@ -31,7 +31,7 @@ namespace Project
             Console.Write(new string('-', _gameColumns - 2));
             Console.Write('+');
 
-            Console.SetCursorPosition(0, Settings.MAP_ROWS + 1);
+            Console.SetCursorPosition(0, Settings.GAME_ROWS + 1);
 
             Console.Write(new string('-', _gameColumns - 2));
 
@@ -112,9 +112,9 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            var hud = new Hud(Settings.MAP_COLUMNS, Settings.MAP_ROWS);
+            var hud = new Hud(Settings.GAME_COLUMNS, Settings.GAME_ROWS);
 
-            var map = new Map(new MapBlockFactory(), Settings.MAP_COLUMNS, Settings.MAP_ROWS);
+            var map = new Map(new MapBlockFactory(), Settings.GAME_COLUMNS, Settings.GAME_ROWS);
             map.Load(Settings.MAP_PATH);
 
             var player = new Player();
