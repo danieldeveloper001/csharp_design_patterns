@@ -4,35 +4,29 @@ namespace Project
 {
     public class Hud
     {
-        private int _gameColumns;
-        private int _gameRows;
-
-        public Hud(int gameColumns, int gameRows)
-        {
-            _gameColumns = gameColumns;
-            _gameRows = gameRows;
-        }
-
         public void Draw(string status)
         {
+            var columns = Settings.GAME_COLUMNS;
+            var rows = Settings.GAME_ROWS;
+
             Console.ForegroundColor = ConsoleColor.White;
 
-            Console.SetCursorPosition(0, _gameRows + 1);
+            Console.SetCursorPosition(0, rows + 1);
             Console.Write('+');
-            Console.Write(new string('-', _gameColumns - 2));
+            Console.Write(new string('-', columns - 2));
             Console.Write('+');
 
-            Console.SetCursorPosition(0, _gameRows + 2);
+            Console.SetCursorPosition(0, rows + 2);
             Console.WriteLine($"| {status, 46} |"); //TODO: _gameColumns - 4
 
-            Console.SetCursorPosition(0, _gameRows + 3);
+            Console.SetCursorPosition(0, rows + 3);
             Console.Write('+');
-            Console.Write(new string('-', _gameColumns - 2));
+            Console.Write(new string('-', columns - 2));
             Console.Write('+');
 
             Console.SetCursorPosition(0, Settings.GAME_ROWS + 1);
 
-            Console.Write(new string('-', _gameColumns - 2));
+            Console.Write(new string('-', columns - 2));
         }
     }
 }
