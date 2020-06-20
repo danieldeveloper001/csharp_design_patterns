@@ -5,41 +5,28 @@ namespace Project
 {
     class Program
     {
+
         static void Main(string[] args)
         {
             ConsoleSetup();
 
+            var map = new Map(new MapBlockFactory(), Settings.MAP_COLUMNS, Settings.MAP_ROWS);
+            map.Load(Settings.MAP_PATH);
+
             var player = new Player();
-            var mapBlockFactory = new MapBlockFactory();
+
             do
             {
-                //TODO: IN MEMORY MAP
-                using (var reader = new StreamReader("./Maps/Level1.txt"))
-                {
-                    var currentBlockDescription = String.Empty;
-                    var rowIndex = 0;
-                    while (reader.ReadLine() is string row)
-                    {
-                        var columnIndex = 0;
-                        while(columnIndex < row.Length && row[columnIndex] is char column)
-                        {
-                            var block = mapBlockFactory.GetMapBlock(column);
-                            block.Draw(columnIndex, rowIndex);
-
-                            if (player.X == columnIndex && player.Y == rowIndex)
-                                currentBlockDescription = block.Description;
-
-                            columnIndex++;
-                        }
-
-                        rowIndex++;
-                    }
-                    var message = $"Player is currently at a {currentBlockDescription}";
-                    Console.ForegroundColor = ConsoleColor.White;
-                    Console.WriteLine($"\n{message, 50}");
-                }
-
+                map.Draw();
                 player.Draw();
+
+                var currentBlock = map.GetBlockAt(player.Column, player.Row);
+
+                var message = $"Player is currently at a {currentBlock.Description}";
+                Console.ForegroundColor = ConsoleColor.White;
+                Console.SetCursorPosition(0, Settings.MAP_ROWS + 1);
+                Console.WriteLine($"\n{message, 50}");
+
 
                 var key = Console.ReadKey();
                 switch(key.Key)
