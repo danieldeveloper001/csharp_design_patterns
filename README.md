@@ -31,5 +31,5 @@ A repository for learning and teaching design patterns with the csharp language.
 - :clock12: Composite
 - :clock12: Decorator
 - :construction: [Facade](./src/facade/)
-- :clock12: Flyweight
+- :construction: [Flyweight](./src/flyweight/)
 - :clock12: Proxy
