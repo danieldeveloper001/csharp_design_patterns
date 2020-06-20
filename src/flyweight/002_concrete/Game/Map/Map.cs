@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using System.IO;
 
 namespace Project
@@ -15,28 +16,23 @@ namespace Project
             _map = new IMapBlock[Settings.GAME_COLUMNS, Settings.GAME_ROWS];
             using (var reader = new StreamReader(Settings.MAP_PATH))
             {
-                var row = 0;
-                while (reader.ReadLine() is string dataRow)
+                for(int row = 0; row < Settings.GAME_ROWS; row++)
                 {
-                     var column = 0;
-                     while(column < dataRow.Length && dataRow[column] is char dataColumn)
-                     {
-                        _map[column, row] = _mapBlockFactory.GetMapBlock(dataColumn);
-                        column++;
-                     }
-                     row++;
+                    for (int column = 0; column < Settings.GAME_COLUMNS; column++)
+                    {
+                        var block = (char)reader.Read();
+                        _map[column, row] = _mapBlockFactory.GetMapBlock(block);
+                    }
+                    reader.Read();
                 }
             }
         }
 
         public void Draw()
         {
-            var _columns = _map.GetLength(0);
-            var _rows = _map.GetLength(1);
-
-            for (int column = 0; column < _columns; column++)
+            for (int column = 0; column < Settings.GAME_COLUMNS; column++)
             {
-                for(int row = 0; row < _rows; row++)
+                for(int row = 0; row < Settings.GAME_ROWS; row++)
                 {
                     var block = GetBlockAt(column, row);
                     block.Draw(column, row);
@@ -46,14 +42,13 @@ namespace Project
 
         public IMapBlock GetBlockAt(int column, int row)
         {
-            if (column < 0 || column >= Settings.GAME_COLUMNS)
-                return null;
-
-            if (row < 0 || row >= Settings.GAME_ROWS)
-                return null;
+            if (OutOfMapBounds(column, 0, Settings.GAME_COLUMNS)) return null;
+            if (OutOfMapBounds(row, 0, Settings.GAME_ROWS)) return null;
 
             return _map[column, row];
-        }
 
+            bool OutOfMapBounds(int value, int minimum, int maximum) =>
+                value < minimum || value >= maximum;
+        }
     }
 }
