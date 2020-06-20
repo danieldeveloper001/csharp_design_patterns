@@ -17,7 +17,7 @@ namespace Project
             Console.Write('+');
 
             Console.SetCursorPosition(0, rows + 2);
-            Console.WriteLine($"| {status, 46} |"); //TODO: _gameColumns - 4
+            Console.WriteLine($"| {status, 46} |"); //TODO: 46 = _gameColumns - 4
 
             Console.SetCursorPosition(0, rows + 3);
             Console.Write('+');

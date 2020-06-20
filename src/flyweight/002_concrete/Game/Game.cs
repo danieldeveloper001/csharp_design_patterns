@@ -38,15 +38,15 @@ namespace Project
                 var status = $"Player is currently at a {currentBlock.Description}";
                 _hud.Draw(status);
 
-                ReadNextAction();
+            } while(ReadNextAction());
 
-            } while(true);
-
-            // _onEndAction();
+            _onEndAction();
         }
 
-        private void ReadNextAction()
+        private bool ReadNextAction()
         {
+            var hasNextAction = true;
+
             //TODO: MAKE GAME UNAWARE OF THE CONSOLE
             var key = Console.ReadKey();
             switch(key.Key)
@@ -64,11 +64,13 @@ namespace Project
                     _player.MoveRight();
                     break;
                 case ConsoleKey.Escape:
-                    _onEndAction();
+                    hasNextAction = false;
                     break;
                 default:
                     break;
             }
+
+            return hasNextAction;
         }
     }
 }

@@ -27,6 +27,7 @@ namespace Project
         {
             Console.Clear();
             Console.CursorVisible = true;
+            Environment.Exit(0);
         }
     }
 }
