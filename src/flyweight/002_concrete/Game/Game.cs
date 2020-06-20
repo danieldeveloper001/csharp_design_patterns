@@ -35,8 +35,7 @@ namespace Project
 
                 //TODO: MAKE THE HUD LISTEN TO CHANGES ON THE PLAYER POSITION
                 var currentBlock = _map.GetBlockAt(_player.Column, _player.Row);
-                var status = $"Player is currently at a {currentBlock.Description}";
-                _hud.Draw(status);
+                _hud.Draw($"Player is currently at a {currentBlock.Description}");
 
             } while(ReadNextAction());
 
@@ -47,7 +46,6 @@ namespace Project
         {
             var hasNextAction = true;
 
-            //TODO: MAKE GAME UNAWARE OF THE CONSOLE
             var key = Console.ReadKey();
             switch(key.Key)
             {
