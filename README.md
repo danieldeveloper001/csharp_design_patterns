@@ -26,7 +26,7 @@ A repository for learning and teaching design patterns with the csharp language.
 |----------------------------------------------------------|:------------------:|:------------------:|:------------------:|
 | [Builder](./src/builder)                                 | :clock12:          | :clock12:          | :clock12:          |
 | [Factory Class](./src/factory_class)                     | :clock12:          | :clock12:          | :clock12:          |
-| [Factory Method](./src/factory_method)*                  | :clock12:          | :clock12:          | :clock12:          |
+| [Factory Method](./src/factory_method)*                  | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Prototype](./src/prototype)                             | :clock12:          | :clock12:          | :clock12:          |
 | [Singleton](./src/singleton)                             | :clock12:          | :clock12:          | :clock12:          |
 
