@@ -13,7 +13,7 @@ A repository for learning and teaching design patterns with the csharp language.
 | [Mediator](./src/mediator/)                              | :clock12:          | :clock12:          | :clock12:          |
 | [Memento](./src/memento/)*                               | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Observer](./src/observer/)*                             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [State](./src/state)                                     | :construction:     | :construction:     | :construction:     |
+| [State](./src/state)                                     | :heavy_check_mark: | :heavy_check_mark: | :construction:     |
 | [Strategy](./src/strategy)                               | :clock12:          | :clock12:          | :clock12:          |
 | [Template Method](./src/template_method)                 | :clock12:          | :clock12:          | :clock12:          |
 | [Visitor](./src/visitor)                                 | :clock12:          | :clock12:          | :clock12:          |
