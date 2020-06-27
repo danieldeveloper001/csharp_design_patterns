@@ -6,21 +6,26 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            var administrator = new User() { Role = UserRole.Administrator };
-            var user = new User() { Role = UserRole.User };
+            var clientWithAdministratorUser = new Client(
+                new ProxyService(
+                    new User()
+                    {
+                        Name = "administrator",
+                        Role = UserRole.Administrator
+                    }
+                ));
 
-            var realService = new RealService();
-            var proxyServiceWithUser = new ProxyService(realService, user);
-            var proxyServiceWithAdministrator = new ProxyService(realService, administrator);
+            clientWithAdministratorUser.Operation($"{nameof(clientWithAdministratorUser)}");
 
-            var clientWithRealService = new Client(realService);
-            clientWithRealService.Operation($"{nameof(clientWithRealService)}");
+            var clientWithUser = new Client(new ProxyService(
+                    new User()
+                    {
+                        Name = "user",
+                        Role = UserRole.User
+                    }
+                ));
 
-            var clientWithProxyServiceAndWithAdministrator = new Client(proxyServiceWithAdministrator);
-            clientWithProxyServiceAndWithAdministrator.Operation($"{nameof(clientWithProxyServiceAndWithAdministrator)}");
-
-            var clientWithProxyServiceWithUserService = new Client(proxyServiceWithUser);
-            clientWithProxyServiceWithUserService.Operation($"{nameof(clientWithProxyServiceWithUserService)}");
+            clientWithUser.Operation($"{nameof(clientWithUser)}");
         }
     }
 }
