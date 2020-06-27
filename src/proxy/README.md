@@ -64,10 +64,10 @@ A virtual proxy acts as a...
 - [Virtual Proxy (concrete)][8]
 
 [1]: ./001_abstract_protective_proxy/
-[2]: ./001_abstract_remote_proxy/
-[3]: ./001_abstract_smart_proxy/
-[4]: ./001_abstract_virtual_proxy/
-[5]: ./002_concrete_protective_proxy/
-[6]: ./002_concrete_remote_proxy/
-[7]: ./002_concrete_smart_proxy/
-[8]: ./002_concrete_virtual_proxy/
+[2]: ./002_abstract_remote_proxy/
+[3]: ./003_abstract_smart_proxy/
+[4]: ./004_abstract_virtual_proxy/
+[5]: ./005_concrete_protective_proxy/
+[6]: ./006_concrete_remote_proxy/
+[7]: ./007_concrete_smart_proxy/
+[8]: ./008_concrete_virtual_proxy/
