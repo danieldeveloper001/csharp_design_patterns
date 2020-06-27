@@ -7,17 +7,21 @@ namespace Project
         private RealService _service;
         private User _user;
 
-        public ProxyService(RealService service, User user)
+        public ProxyService(User user)
         {
-            _service = service;
+            _service = new RealService();
             _user = user;
         }
 
         public bool Operation(string parameter)
         {
             if (_user.Role != UserRole.Administrator)
+            {
+                Console.WriteLine($"\nUnauthorized ('{_user.Name}' with role '{_user.Role}')!");
                 return false;
+            }
 
+            Console.WriteLine($"\nAuthorized ('{_user.Name}' with role '{_user.Role}')!");
             return _service.Operation(parameter);
         }
     }

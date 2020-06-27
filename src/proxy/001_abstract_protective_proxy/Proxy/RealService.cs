@@ -6,7 +6,7 @@ namespace Project
     {
         public bool Operation(string parameter)
         {
-            Console.WriteLine(parameter);
+            Console.WriteLine($"{nameof(RealService)} executed with parameter '{parameter}'!");
             return true;
         }
     }
