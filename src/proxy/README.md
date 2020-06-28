@@ -43,6 +43,10 @@ common usage scenarios are **smart proxy**, **remote proxy**, **protective proxy
 ## Drawbacks
 
 :construction: This section is under construction.
+- Doesn't allow "stacking" multiple proxies.
+- [TODO: FURTHER ELABORATE] Resembles other design patterns.
+  - Decorator for the smart proxy;
+  - Flyweight for the virtual proxy used as a cache;
 
 ## Examples
 
@@ -50,10 +54,10 @@ common usage scenarios are **smart proxy**, **remote proxy**, **protective proxy
 - [Remote Proxy (abstract)][2]
 - [Smart Proxy (abstract)][3]
 - [Virtual Proxy (abstract)][4]
-- [Protective Proxy (concrete)][5]
-- [Remote Proxy (concrete)][6]
-- [Smart Proxy (concrete)][7]
-- [Virtual Proxy (concrete)][8]
+- :construction: [Protective Proxy (concrete)][5]
+- :construction: [Remote Proxy (concrete)][6]
+- :construction: [Smart Proxy (concrete)][7]
+- :construction: [Virtual Proxy (concrete)][8]
 
 [1]: ./001_abstract_protective_proxy/
 [2]: ./002_abstract_remote_proxy/
