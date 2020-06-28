@@ -51,13 +51,13 @@ common usage scenarios are **smart proxy**, **remote proxy**, **protective proxy
 ## Examples
 
 - [Protective Proxy (abstract)][1]
-- [Remote Proxy (abstract)][2]
+- [Remote Proxy (abstract)][2] [:construction: requires a fairly simple example]
 - [Smart Proxy (abstract)][3]
 - [Virtual Proxy (abstract)][4]
-- :construction: [Protective Proxy (concrete)][5]
-- :construction: [Remote Proxy (concrete)][6]
-- :construction: [Smart Proxy (concrete)][7]
-- :construction: [Virtual Proxy (concrete)][8]
+- [Protective Proxy (concrete)][5] [:construction: requires an authentication system for a concrete example]
+- [Remote Proxy (concrete)][6] [:construction: requires an external system for a concrete example]
+- [Smart Proxy (concrete)][7] [:construction:]
+- [Virtual Proxy (concrete)][8] [:construction:]
 
 [1]: ./001_abstract_protective_proxy/
 [2]: ./002_abstract_remote_proxy/
