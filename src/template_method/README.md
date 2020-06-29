@@ -22,8 +22,12 @@ able to change parts of its behaviour within the concrete implementations.
 
 ## Drawbacks
 
-- Requires additional effort at designing the solution, so that
+- Requires additional effort at designing the solution to ensure that abstract and concrete classes really have a
+  relationship and really share behaviour
+  - Poorly implemented template methods could lead to unimplemented overrides on the concrete classes.
 - Changes to the abstract class behaviour affect multiple concrete classes behaviour
+  - Poor implemented template methods could lead to breaking concrete classes when shared behaviour changes on the
+    abstract class
 
 ## Examples
 
