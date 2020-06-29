@@ -38,6 +38,6 @@ A repository for learning and teaching design patterns with the csharp language.
 | [Decorator](./src/decorator)                             | :clock12:          | :clock12:          | :clock12:          |
 | [Facade](./src/facade)                                   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Flyweight](./src/flyweight)                             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Proxy](./src/proxy)                                     | :clock12:          | :clock12:          | :clock12:          |
+| [Proxy](./src/proxy)                                     | :heavy_check_mark: | :construction:     | :construction:     |
 
 P.S.: Most of the implementations and documentations still needs improvements, but are enough for an initial round.
