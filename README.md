@@ -22,7 +22,7 @@ A repository for learning and teaching design patterns with the csharp language.
 
 | Pattern                                                  | Documentation      | Example (abstract) | Example (concrete) |
 |----------------------------------------------------------|:------------------:|:------------------:|:------------------:|
-| [Builder](./src/builder)                                 | :clock12:          | :clock12:          | :clock12:          |
+| [Builder](./src/builder)                                 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Factory Class](./src/factory_class)                     | :clock12:          | :clock12:          | :clock12:          |
 | [Factory Method](./src/factory_method)                   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Prototype](./src/prototype)                             | :clock12:          | :clock12:          | :clock12:          |
