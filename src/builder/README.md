@@ -37,8 +37,12 @@ the builder interface executing the same steps for creating the product.
 
 ## Examples
 
-- [Abstract][1]
-- [Concrete][2]
+- [Abstract (with reusable creation logic on director)][1]
+- [Concrete (with reusable creation logic on director)][2]
+- [Abstract (with complex constructor on product)][3]
+- [Concrete (with complex constructor on product)][4]
 
-[1]: ./001_abstract/
-[2]: ./002_concrete/
+[1]: ./001_abstract_with_director/
+[2]: ./002_concrete_with_director/
+[3]: ./003_abstract_with_complex_constructor/
+[4]: ./004_concrete_with_complex_constructor/
