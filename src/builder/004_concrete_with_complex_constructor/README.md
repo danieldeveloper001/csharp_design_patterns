@@ -5,7 +5,7 @@ use of the **builder design pattern** to demonstrate how to create a fluent api 
 the product for semantic improvements while creating products with multiple complex parameters in its constructor. In
 this example, the constructor complexity doesn't reside in the number of parameters, but on the lack of semantics that
 would otherwise be somewhat acomplished by naming the parameters at each constructor or by creating independent
-variables with appropriate semantics.
+variables with appropriate semantics, so that instead of something like ...
 
 ```csharp
 var computer = new Computer(
@@ -34,6 +34,33 @@ var computer = new Computer(
         capacity: 1,
         unit: StorageUnit.TB,
         type: StorageType.HardDrive)
-    },
-)
+    });
+```
+
+... something like this can be done instead ...
+
+```csharp
+var computer = new ComputerBuilder()
+  .BuildProcessor()
+      .WithName("O7")
+      .WithClock(2.7m)
+      .WithCache(4m)
+      .Add()
+  .BuildMemory()
+      .WithCapacity(8, MemoryUnit.GB)
+      .WithType(MemoryType.PCR4)
+      .Add()
+  .BuildMemory()
+      .WithCapacity(8, MemoryUnit.GB)
+      .WithType(MemoryType.PCR4)
+      .Add()
+  .BuildStorage()
+      .WithCapacity(256, StorageUnit.GB)
+      .WithType(StorageType.SolidDrive)
+      .Add()
+  .BuildStorage()
+      .WithCapacity(1, StorageUnit.TB)
+      .WithType(StorageType.HardDrive)
+      .Add()
+  .Build();
 ```
