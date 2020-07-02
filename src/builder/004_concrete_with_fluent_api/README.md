@@ -1,11 +1,11 @@
-# The Computer Factory With Complex Constructors and Chained Builders
+# The Computer Factory With Fluent Api and Chained Builders
 
-**The Computer Factory With Complex Constructors and Chained Builders** is a ridiculously long named example that makes
+**The Computer Factory With Fluent Api and Chained Builders** is a ridiculously long named example that makes
 use of the **builder design pattern** to demonstrate how to create a fluent api that chains builders for each part of
-the product for semantic improvements while creating products with multiple complex parameters in its constructor. In
-this example, the constructor complexity doesn't reside in the number of parameters, but on the lack of semantics that
-would otherwise be somewhat acomplished by naming the parameters at each constructor or by creating independent
-variables with appropriate semantics, so that instead of something like ...
+the product creation process for semantic improvements while creating products with multiple complex parameters in its
+constructor. In this example, the complexity doesn't reside in the number of parameters on the product and product parts
+constructors, but on the lack of semantics that would otherwise be somewhat acomplished by naming the parameters at each
+constructor or by creating independent variables with appropriate semantics, so that instead of something like ...
 
 ```csharp
 var computer = new Computer(
@@ -37,7 +37,7 @@ var computer = new Computer(
     });
 ```
 
-... something like this can be done instead ...
+... something like this can be done ...
 
 ```csharp
 var computer = new ComputerBuilder()

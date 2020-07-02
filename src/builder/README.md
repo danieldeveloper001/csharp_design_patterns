@@ -29,7 +29,11 @@ the builder interface executing the same steps for creating the product.
 
 ## Benefits
 
-:construction: This section is under construction
+- Allows different representations of the same product being created
+- Segregates product creation from product representation
+  - Creation logic and steps may be made reusable by implementing a director
+  - Creation logic and steps may be made fluent by returning the builder in each step
+- Improves product creation semantics
 
 ## Drawbacks
 
@@ -39,10 +43,10 @@ the builder interface executing the same steps for creating the product.
 
 - [Abstract (with reusable creation logic on director)][1]
 - [Concrete (with reusable creation logic on director)][2]
-- [Abstract (with complex constructor on product)][3]
-- [Concrete (with complex constructor on product)][4]
+- [Abstract (with fluent api)][3]
+- [Concrete (with fluent api)][4]
 
 [1]: ./001_abstract_with_director/
 [2]: ./002_concrete_with_director/
-[3]: ./003_abstract_with_complex_constructor/
-[4]: ./004_concrete_with_complex_constructor/
+[3]: ./003_abstract_with_fluent_api/
+[4]: ./004_concrete_with_fluent_api/
