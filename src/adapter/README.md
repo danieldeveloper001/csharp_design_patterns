@@ -18,6 +18,7 @@ external services that cannot be modified.
   - Implements the contract from the abstract adapter
   - Represents the implementation of the compatibility layer which makes possibile the interoperability between the
     client and the adaptee.
+  - Holds a reference to the adaptee in order to invoke the original service though the adapted contract implementation.
 - **Adaptee**
   - Represents the existing internal or external service that cannot be modified.
 
