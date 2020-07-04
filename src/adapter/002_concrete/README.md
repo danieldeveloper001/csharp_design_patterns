@@ -1,9 +1,9 @@
-# The Abstract Example
+# The Calculator Service Example
 
-**The Abstract Example** makes use of the **adapter design pattern** to demonstrate how make communication between a
-client and a service provider with incompatible interfaces possible*. In this example, there is an utilitary class
-**calculator** which can perform **sum** and **sub** operations with two numbers and a **client** that needs to perform
-**sum** and **sub** operations with any given number of arguments. Such incompatibility is resolved by the
+**The Calculator Service Example** makes use of the **adapter design pattern** to demonstrate how make communication
+between a client and a service provider with incompatible interfaces possible*. In this example, there is an utilitary
+class **calculator** which can perform **sum** and **sub** operations with two numbers and a **client** that needs to
+perform **sum** and **sub** operations with any given number of arguments. Such incompatibility is resolved by the
 **multiparameter calculator adapter**, which encapsulates the **calculator** through its base class **calculator
 adapter** and receives the desired parameters. The **calculator adapter** is not a requirement for the adaptation
 process but, it makes the code more flexible if the client requirements change, so that other adapters could be created
