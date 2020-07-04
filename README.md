@@ -32,7 +32,7 @@ A repository for learning and teaching design patterns with the csharp language.
 
 | Pattern                                                  | Documentation      | Example (abstract) | Example (concrete) |
 |----------------------------------------------------------|:------------------:|:------------------:|:------------------:|
-| [Adapter](./src/adapter)                                 | :clock12:          | :clock12:          | :clock12:          |
+| [Adapter](./src/adapter)                                 | :construction:     | :construction:     | :construction:     |
 | [Bridge](./src/bridge)                                   | :clock12:          | :clock12:          | :clock12:          |
 | [Composite](./src/composite)                             | :clock12:          | :clock12:          | :clock12:          |
 | [Decorator](./src/decorator)                             | :clock12:          | :clock12:          | :clock12:          |
