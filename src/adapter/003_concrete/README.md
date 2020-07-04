@@ -1,15 +1,10 @@
-# The Abstract Example
+# The External Services Response Example
 
-**The Abstract Example** makes use of the **adapter design pattern** to demonstrate how make communication between a
-client and a service provider with incompatible interfaces possible*. In this example, there is an utilitary class
-**calculator** which can perform **sum** and **sub** operations with two numbers and a **client** that needs to perform
-**sum** and **sub** operations with any given number of arguments. Such incompatibility is resolved by the
-**multiparameter calculator adapter**, which encapsulates the **calculator** through its base class **calculator
-adapter** and receives the desired parameters. The **calculator adapter** is not a requirement for the adaptation
-process but, it makes the code more flexible if the client requirements change, so that other adapters could be created
-without breaking the sum and sub operations performed by the client itself.
+**The External Services Response Example** makes use of the **adapter design pattern** to demonstrate how to adapt
+different types from external services from a given company, namely **customer**, **employee** and **provider**. In this
+example, the contents in the **services** folder simulates external service requests and responses that must be adapted
+in order to be properly handled by this application as a **person**.
 
-*Please, bear in mind that since this is a simple example, the **calculator** could have been modified in order to
-accept any number of parameters rather than implementing an adapter to do such work but, in real world usage of this
-design pattern, it would be already in use by multiple parts of the system and changes to its public contract would
-break existing clients or it would be a class residing in a thirdy party library.
+- **CustomerToPersonAdapter**: adapts the customer service response to a person model.
+- **EmployeeToPersonAdapter**: adapts the employee service response to a person model.
+- **ProviderToPersonAdapter**: adapts the provider service response to a person model.

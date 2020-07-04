@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Project
 {
@@ -6,16 +7,25 @@ namespace Project
     {
         static void Main(string[] args)
         {
-            var person = new Person() { Name = "name" };
+            var people = new List<IPerson>();
 
-            PersonAdapter customer = new PersonToCustomerAdapter(person);
-            Console.WriteLine(customer.Name);
+            var customers = new CustomerClient().Get();
+            foreach(var customer in customers)
+                people.Add(new CustomerToPersonAdapter(customer));
 
-            PersonAdapter employee = new PersonToEmployeeAdapter(person);
-            Console.WriteLine(employee.Name);
+            var employees = new EmployeeClient().Get();
+            foreach(var employee in employees)
+                people.Add(new EmployeeToPersonAdapter(employee));
 
-            PersonAdapter provider = new PersonToProviderAdapter(person);
-            Console.WriteLine(provider.Name);
+            var providers = new ProviderClient().Get();
+            foreach(var provider in providers)
+                people.Add(new ProviderToPersonAdapter(provider));
+
+            foreach(var person in people)
+            {
+                Console.WriteLine($"{nameof(person.Name)}: {person.Name}");
+                Console.WriteLine($"{nameof(person.CreatedAt)}: {person.CreatedAt}");
+            }
         }
     }
 }
