@@ -9,7 +9,7 @@ the singleton instance.
 
 - **Sigleton**
   - Defines a private parameterless constructor
-  - Definas a method for creating the instance
+  - Defines a method for creating the instance
     - Can be eagerly loaded
     - Can be lazily loaded
     - Can be thread safe
