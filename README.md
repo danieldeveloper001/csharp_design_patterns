@@ -6,7 +6,7 @@ A repository for learning and teaching design patterns with the csharp language.
 
 | Pattern                                                  | Documentation      | Example (abstract) | Example (concrete) |
 |----------------------------------------------------------|:------------------:|:------------------:|:------------------:|
-| [Chain of Responsibility](./src/chain_of_responsibility) | :clock12:          | :clock12:          | :clock12:          |
+| [Chain of Responsibility](./src/chain_of_responsibility) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Command](./src/command/)                                | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Interpreter](./src/interpreter)                         | :clock12:          | :clock12:          | :clock12:          |
 | [Iterator](./src/iterator/)                              | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
