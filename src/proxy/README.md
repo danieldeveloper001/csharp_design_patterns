@@ -13,9 +13,9 @@ common usage scenarios are **smart proxy**, **remote proxy**, **protective proxy
   local resource.
 - **Smart Proxy**: a smart proxy acts as an aggregator of functionality to a service, by implementing logic that will be
   executed before or after invoking the real service.
-- **Virtual Proxy**: a virtual proxy acts as an [...], by implementing features such as lazy loading logic that will
-  provide on demand object creation when consuming the real service or caching that will prevent the same resource from
-  being repeatedly requested when consuming the real service.
+- **Virtual Proxy**: a virtual proxy acts as an consumption optimizer, by implementing features such as lazy loading
+  logic that will provide on demand object creation when consuming the real service or caching that will prevent the
+  same resource from being repeatedly requested when consuming the real service.
 
 ## Components and Roles
 
@@ -43,27 +43,16 @@ common usage scenarios are **smart proxy**, **remote proxy**, **protective proxy
 ## Drawbacks
 
 :construction: This section is under construction.
-- Doesn't allow "stacking" multiple proxies.
-- [TODO: FURTHER ELABORATE] Resembles other design patterns.
-  - Decorator for the smart proxy;
-  - Flyweight for the virtual proxy used as a cache;
+- Doesn't allow stacking multiple proxies
 
 ## Examples
 
-- [Protective Proxy (abstract)][1]
-- [Remote Proxy (abstract)][2] [:construction: requires a fairly simple example]
-- [Smart Proxy (abstract)][3]
-- [Virtual Proxy (abstract)][4]
-- [Protective Proxy (concrete)][5] [:construction: requires an authentication system for a concrete example]
-- [Remote Proxy (concrete)][6] [:construction: requires an external system for a concrete example]
-- [Smart Proxy (concrete)][7] [:construction:]
-- [Virtual Proxy (concrete)][8] [:construction:]
+- [Protective Proxy][1]
+- [Remote Proxy][2]
+- [Smart Proxy][3]
+- [Virtual Proxy][4]
 
 [1]: ./001_abstract_protective_proxy/
 [2]: ./002_abstract_remote_proxy/
 [3]: ./003_abstract_smart_proxy/
 [4]: ./004_abstract_virtual_proxy/
-[5]: ./005_concrete_protective_proxy/
-[6]: ./006_concrete_remote_proxy/
-[7]: ./007_concrete_smart_proxy/
-[8]: ./008_concrete_virtual_proxy/
