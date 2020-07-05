@@ -25,7 +25,7 @@ A repository for learning and teaching design patterns with the csharp language.
 | [Builder](./src/builder)                                 | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Factory Class](./src/factory_class)                     | :clock12:          | :clock12:          | :clock12:          |
 | [Factory Method](./src/factory_method)                   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Prototype](./src/prototype)                             | :clock12:          | :clock12:          | :clock12:          |
+| [Prototype](./src/prototype)                             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Singleton](./src/singleton)                             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 
 ## Structural
@@ -39,5 +39,3 @@ A repository for learning and teaching design patterns with the csharp language.
 | [Facade](./src/facade)                                   | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Flyweight](./src/flyweight)                             | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Proxy](./src/proxy)                                     | :heavy_check_mark: | :construction:     | :construction:     |
-
-P.S.: Most of the implementations and documentations still needs improvements, but are enough for an initial round.
