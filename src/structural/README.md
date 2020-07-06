@@ -56,7 +56,8 @@ extrinsic state in its operations through an on demand cache for optimized compu
 
 ### Proxy
 
-[Proxy][proxy] focuses on...
+[Proxy][proxy] adds a layer of access control functionality between clients and existing services in a way that clients
+are unaware of which one is being consumed.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
