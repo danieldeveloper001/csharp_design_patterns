@@ -21,7 +21,7 @@ adaptation process.
 ### Composite
 
 [Composite][composite] allows clients to consume hierarchical object structures uniformly, making no distinction between
-different node types, through a contract implemented by any element in any level hierarchy.
+different node types, through a contract implemented by any element at any hierarchical level.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
@@ -37,7 +37,9 @@ different node types, through a contract implemented by any element in any level
 
 ### Facade
 
-[Facade][facade] focuses on...
+[Facade][facade] allows clients to interact with contracts that are redesigned either to organize existing large
+contracts into smaller and cohese ones or to aggregate functionality from multiple subsystems in order to group related
+functionality.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
