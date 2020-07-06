@@ -38,7 +38,8 @@ shallow or deep cloning instances that represent variations of the same object, 
 
 ### Singleton
 
-[Singleton][singleton] focuses on...
+[Singleton][singleton] prevents an object from being created multiple times during the aplication lifecycle by making it
+responsible for creating and providing for clients the single instance.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
