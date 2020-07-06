@@ -2,7 +2,8 @@
 
 ### Chain Of Responsibility
 
-[Chain of Responsibility][chain_of_responsibility] focuses on...
+[Chain of Responsibility][chain_of_responsibility] handles sequential processing for a request by linking steps that may
+decide whether to invoke or to not invoke the next step in order to handle the request.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
