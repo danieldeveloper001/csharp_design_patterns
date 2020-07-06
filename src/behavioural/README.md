@@ -42,7 +42,8 @@
 
 ### Memento
 
-[Memento][memento] focuses on...
+[Memento][memento] aims to capture state changes from an instance so that it can be restored in a way that respects
+the target object encapsulation.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
