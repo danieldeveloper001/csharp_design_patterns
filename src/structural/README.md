@@ -2,7 +2,9 @@
 
 ### Adapter
 
-[Adapter][adapter] focuses on...
+[Adapter][adapter] allows clients to interact with internal or external existing code bases that are incompatible with
+the current implementation and cannot be changed, through a thin layer whose solely responsibility is handling the
+adaptation process.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
