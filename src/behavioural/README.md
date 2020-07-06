@@ -26,7 +26,8 @@
 
 ### Iterator
 
-[Iterator][iterator] focuses on...
+[Iterator][iterator] provides one or more reusable navigation strategies to traverse collections of data that are
+decoupled from the client and from the collection.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
