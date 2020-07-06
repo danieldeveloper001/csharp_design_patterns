@@ -14,9 +14,9 @@ adaptation process.
 
 [Bridge][bridge] focuses on...
 
-:clock12: Documentation
-:clock12: Example (abstract)
-:clock12: Example (concrete)
+:construction: Documentation
+:construction: Example (abstract)
+:construction: Example (concrete)
 
 ### Composite
 
@@ -31,9 +31,9 @@ different node types, through a contract implemented by any element at any hiera
 
 [Decorator][decorator] focuses on...
 
-:clock12: Documentation
-:clock12: Example (abstract)
-:clock12: Example (concrete)
+:construction: Documentation
+:construction: Example (abstract)
+:construction: Example (concrete)
 
 ### Facade
 
