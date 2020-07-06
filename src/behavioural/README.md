@@ -50,7 +50,8 @@
 
 ### Observer
 
-[Observer][observer] focuses on...
+[Observer][observer] allows an object whose state changes may affect other objects to perform unilateral broadcast
+communication in order to keep listeners up to date.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
