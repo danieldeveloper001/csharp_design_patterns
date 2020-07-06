@@ -29,7 +29,8 @@ the same contract, decoupling clients from the creation logic.
 
 ### Prototype
 
-[Prototype][prototype] focuses on...
+[Prototype][prototype] allows creating unique object instances from existing blueprints with predefined state through
+shallow or deep cloning instances that represent variations of the same object, without the need of subclassing.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
