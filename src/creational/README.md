@@ -2,7 +2,9 @@
 
 ### Builder
 
-[Builder][builder] focuses on...
+[Builder][builder] facilitates the process of creating complex objects by using a step by step approach that decompose
+the creation into smaller steps that can be invoked through a director with one or more creation options for reusability
+or directly by clients for flexibility.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
