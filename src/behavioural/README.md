@@ -66,7 +66,8 @@
 
 ### Strategy
 
-[Strategy][strategy] focuses on...
+[Strategy][strategy] allows dynamically changing one or more actions performed by a given context by parametrizing it
+with the algorithm that implements the desired behaviour.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
