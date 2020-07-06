@@ -58,7 +58,8 @@
 
 ### State
 
-[State][state] focuses on...
+[State][state] implements a state machine that modifies the behaviour of a given context and handles transition logic
+and restrictions from one state to another.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
