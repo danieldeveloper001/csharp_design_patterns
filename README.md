@@ -24,15 +24,15 @@ this repository, the language of choice for demonstrating them is C#.
 
 ## Behavioural
 
-[Behavioural][behavioural] design patterns focuses on...
+[Behavioural][behavioural] design patterns focuses on how algorithms are implemented.
 
 ## Creational
 
-[Creational][creational] design patterns focuses on...
+[Creational][creational] design patterns focuses on how objects are created and how their lifecycle is managed.
 
 ## Structural
 
-[Structural][structural] design patterns focuses on...
+[Structural][structural] design patterns focuses on how objects are composed in order to achieve a goal.
 
 
 
