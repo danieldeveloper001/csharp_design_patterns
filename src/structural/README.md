@@ -47,7 +47,8 @@ functionality.
 
 ### Flyweight
 
-[Flyweight][flyweight] focuses on...
+[Flyweight][flyweight] allows multiple object instances to share intrinsic state while still being able to handle
+extrinsic state in its operations through an on demand cache for optimized compute resource usage.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
