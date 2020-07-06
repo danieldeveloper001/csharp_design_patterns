@@ -74,7 +74,8 @@
 
 ### Template Method
 
-[Template Method][template_method] focuses on...
+[Template Method][template_method] implements a reusable algorithm skeleton whose behaviour can be shared and customized
+by one or more concrete implementations of an abstraction.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
