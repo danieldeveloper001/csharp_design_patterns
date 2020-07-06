@@ -14,9 +14,9 @@ or directly by clients for flexibility.
 
 [Factory][factory] focuses on...
 
-:clock12: Documentation
-:clock12: Example (abstract)
-:clock12: Example (concrete)
+:construction: Documentation
+:construction: Example (abstract)
+:construction: Example (concrete)
 
 ### Factory Method
 
