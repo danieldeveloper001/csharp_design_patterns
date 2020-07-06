@@ -20,7 +20,8 @@ adaptation process.
 
 ### Composite
 
-[Composite][composite] focuses on...
+[Composite][composite] allows clients to consume hierarchical object structures uniformly, making no distinction between
+different node types, through a contract implemented by any element in any level hierarchy.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
