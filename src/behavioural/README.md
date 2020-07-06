@@ -10,7 +10,8 @@
 
 ### Command
 
-[Command][command] focuses on...
+[Command][command] implements semantic requests to manipulate an object state whose execution may be trackable,
+undoable, redoable and delayed.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
