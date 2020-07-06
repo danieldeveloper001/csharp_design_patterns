@@ -20,7 +20,8 @@ or directly by clients for flexibility.
 
 ### Factory Method
 
-[Factory Method][factory_method] focuses on...
+[Factory Method][factory_method] defines a parametrized reusable interface for creating one or more object derived from
+the same contract, decoupling clients from the creation logic.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
