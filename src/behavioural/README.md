@@ -37,11 +37,12 @@ decoupled from the client and from the collection.
 
 ### Mediator
 
-[Mediator][mediator] focuses on...
+[Mediator][mediator] allows communication between completely decoupled objects by implementing a communication hub that
+sends and receives communication requests.
 
-:construction: Documentation
-:construction: Example (abstract)
-:construction: Example (concrete)
+:heavy_check_mark: Documentation
+:heavy_check_mark: Example (abstract)
+:heavy_check_mark: Example (concrete)
 
 ### Memento
 
