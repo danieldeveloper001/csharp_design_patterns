@@ -36,7 +36,7 @@ mediator. In its turn, the mediator contains the logic for sending and receivng 
 ## Examples
 
 - [Abstract][1]
-- [Practical][2]
+- [Concrete][2]
 
 [1]: ./001_abstract/
-[2]: ./002_practical/
+[2]: ./002_concrete/
