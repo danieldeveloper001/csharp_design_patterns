@@ -18,18 +18,21 @@ namespace Project
             {
                 Colleague2.Receive(message);
                 Colleague3.Receive(message);
+                return;
             }
 
             if (colleague is Colleague2)
             {
                 Colleague1.Receive(message);
                 Colleague3.Receive(message);
+                return;
             }
 
             if (colleague is Colleague3)
             {
                 Colleague1.Receive(message);
                 Colleague2.Receive(message);
+                return;
             }
         }
     }
