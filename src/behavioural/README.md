@@ -91,11 +91,12 @@ by one or more concrete implementations of an abstraction.
 
 ### Visitor
 
-[Visitor][visitor] focuses on...
+[Visitor][visitor] focuses on behaviour extension for both related and unrelated types, as though on decoupling such
+extension from these types.
 
-:construction: Documentation
-:construction: Example (abstract)
-:construction: Example (concrete)
+:heavy_check_mark: Documentation
+:heavy_check_mark: Example (abstract)
+:heavy_check_mark: Example (concrete)
 
 
 
