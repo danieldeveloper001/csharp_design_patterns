@@ -29,11 +29,12 @@ different node types, through a contract implemented by any element at any hiera
 
 ### Decorator
 
-[Decorator][decorator] focuses on...
+[Decorator][decorator] allows extending functionality by encapsulating method calls within a layered structure with
+clearly defined responsibility boundaries.
 
-:construction: Documentation
-:construction: Example (abstract)
-:construction: Example (concrete)
+:heavy_check_mark: Documentation
+:heavy_check_mark: Example (abstract)
+:heavy_check_mark: Example (concrete)
 
 ### Facade
 
