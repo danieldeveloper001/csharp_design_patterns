@@ -47,8 +47,8 @@ responsible for creating and providing for clients the single instance.
 
 
 
+[abstract_factory]: ./abstract_factory/
 [builder]: ./builder/
-[factory]: ./factory/
 [factory_method]: ./factory_method/
 [prototype]: ./prototype/
 [singleton]: ./singleton/
