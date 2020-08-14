@@ -2,11 +2,11 @@ using System;
 
 namespace Project
 {
-    public abstract class Product
+    public abstract class ProductB
     {
         public string Property { get; protected set; }
 
-        public Product(string property)
+        public ProductB(string property)
         {
             Property = property;
         }
