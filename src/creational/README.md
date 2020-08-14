@@ -2,7 +2,8 @@
 
 ### Abstract Factory
 
-[Abstract Factory][factory] focuses on creating families of related objects, decoupling clients from the creation logic.
+[Abstract Factory][abstract_factory] focuses on creating families of related objects, decoupling clients from the
+creation logic.
 
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
