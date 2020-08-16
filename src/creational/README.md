@@ -1,5 +1,14 @@
 ## Creational
 
+### Abstract Factory
+
+[Abstract Factory][abstract_factory] focuses on creating families of related objects, decoupling clients from the
+creation logic.
+
+:heavy_check_mark: Documentation
+:heavy_check_mark: Example (abstract)
+:heavy_check_mark: Example (concrete)
+
 ### Builder
 
 [Builder][builder] facilitates the process of creating complex objects by using a step by step approach that decompose
@@ -9,14 +18,6 @@ or directly by clients for flexibility.
 :heavy_check_mark: Documentation
 :heavy_check_mark: Example (abstract)
 :heavy_check_mark: Example (concrete)
-
-### Factory
-
-[Factory][factory] focuses on...
-
-:construction: Documentation
-:construction: Example (abstract)
-:construction: Example (concrete)
 
 ### Factory Method
 
@@ -47,8 +48,8 @@ responsible for creating and providing for clients the single instance.
 
 
 
+[abstract_factory]: ./abstract_factory/
 [builder]: ./builder/
-[factory]: ./factory/
 [factory_method]: ./factory_method/
 [prototype]: ./prototype/
 [singleton]: ./singleton/
